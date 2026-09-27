@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" fill="none">
+  <defs>
+    <clipPath id="inside">
+      <path d="M210 188 H430 C458 188 454 214 428 226 C498 250 516 330 504 420 C492 520 440 568 320 576 C200 568 148 520 136 420 C124 330 142 250 212 226 C186 214 182 188 210 188 Z"/>
+    </clipPath>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#231910"/>
+      <stop offset="0.48" stop-color="#1a140f"/>
+      <stop offset="0.52" stop-color="#12181e"/>
+      <stop offset="1" stop-color="#10161c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="800" fill="url(#sky)"/>
+
+  <!-- sun -->
+  <g fill="#d8924a">
+    <rect x="92" y="78" width="28" height="28"/>
+    <rect x="100" y="62" width="12" height="12"/>
+    <rect x="100" y="110" width="12" height="12"/>
+    <rect x="76" y="86" width="12" height="12"/>
+    <rect x="124" y="86" width="12" height="12"/>
+  </g>
+  <!-- moon -->
+  <g fill="#d5e0ea">
+    <rect x="500" y="84" width="36" height="12"/>
+    <rect x="508" y="72" width="28" height="12"/>
+    <rect x="516" y="60" width="16" height="12"/>
+    <rect x="508" y="96" width="28" height="12"/>
+    <rect x="516" y="108" width="12" height="8"/>
+    <rect x="492" y="96" width="12" height="16" fill="#10161c"/>
+  </g>
+  <!-- stars -->
+  <g fill="#d5e0ea">
+    <rect x="470" y="150" width="6" height="6"/>
+    <rect x="560" y="140" width="4" height="4"/>
+    <rect x="530" y="190" width="4" height="4"/>
+    <rect x="590" y="210" width="6" height="6"/>
+    <rect x="500" y="230" width="4" height="4"/>
+  </g>
+
+  <!-- ground -->
+  <rect x="0" y="690" width="640" height="110" fill="#14110e"/>
+  <rect x="0" y="690" width="640" height="4" fill="#2a241c"/>
+
+  <g clip-path="url(#inside)">
+    <rect x="120" y="180" width="200" height="420" fill="#d8924a" opacity="0.08"/>
+    <rect x="320" y="180" width="200" height="420" fill="#9bb4c8" opacity="0.06"/>
+    <!-- soil -->
+    <ellipse cx="320" cy="530" rx="168" ry="48" fill="#2a2118"/>
+    <ellipse cx="320" cy="512" rx="150" ry="28" fill="#3a2c22"/>
+
+    <!-- fungus -->
+    <g fill="#8eae78">
+      <rect x="196" y="430" width="16" height="16"/>
+      <rect x="212" y="414" width="48" height="16"/>
+      <rect x="204" y="430" width="64" height="20"/>
+      <rect x="220" y="450" width="28" height="28"/>
+      <rect x="188" y="466" width="20" height="12"/>
+      <rect x="248" y="462" width="24" height="12"/>
+      <rect x="176" y="478" width="12" height="8"/>
+      <rect x="268" y="474" width="16" height="8"/>
+    </g>
+    <g fill="#6e8f5c">
+      <rect x="220" y="422" width="16" height="8"/>
+      <rect x="236" y="438" width="12" height="8"/>
+    </g>
+
+    <!-- seed -->
+    <g fill="#d8924a">
+      <rect x="300" y="436" width="28" height="12"/>
+      <rect x="292" y="448" width="44" height="16"/>
+      <rect x="300" y="464" width="28" height="16"/>
+      <rect x="308" y="480" width="12" height="10"/>
+    </g>
+    <rect x="312" y="452" width="8" height="20" fill="#8a5a32"/>
+
+    <!-- egg -->
+    <g fill="#f0e6d4">
+      <rect x="392" y="424" width="28" height="12"/>
+      <rect x="380" y="436" width="52" height="16"/>
+      <rect x="372" y="452" width="68" height="24"/>
+      <rect x="380" y="476" width="52" height="12"/>
+      <rect x="392" y="488" width="28" height="8"/>
+    </g>
+    <g fill="#c4b49a">
+      <rect x="392" y="456" width="8" height="8"/>
+      <rect x="412" y="468" width="8" height="8"/>
+    </g>
+
+    <!-- sprout, the merge -->
+    <g fill="#8eae78">
+      <rect x="332" y="392" width="12" height="36"/>
+    </g>
+    <g fill="#f0e6d4">
+      <rect x="320" y="372" width="20" height="16"/>
+      <rect x="336" y="364" width="16" height="16"/>
+    </g>
+    <rect x="340" y="368" width="8" height="8" fill="#d8924a"/>
+
+    <!-- glass highlight -->
+    <rect x="196" y="240" width="10" height="180" fill="#ffffff" opacity="0.14"/>
+  </g>
+
+  <!-- jar outline -->
+  <path d="M210 188 H430 C458 188 454 214 428 226 C498 250 516 330 504 420 C492 520 440 568 320 576 C200 568 148 520 136 420 C124 330 142 250 212 226 C186 214 182 188 210 188 Z" stroke="#d7e2da" stroke-width="6"/>
+  <ellipse cx="320" cy="188" rx="118" ry="18" fill="#121614" stroke="#d7e2da" stroke-width="6"/>
+
+  <!-- seasons -->
+  <g transform="translate(96 624)">
+    <!-- spring sprout -->
+    <g fill="#8eae78">
+      <rect x="28" y="28" width="8" height="20"/>
+      <rect x="16" y="16" width="16" height="12"/>
+      <rect x="32" y="12" width="16" height="12"/>
+    </g>
+    <!-- summer sun -->
+    <g fill="#d8924a" transform="translate(132 0)">
+      <rect x="18" y="18" width="20" height="20"/>
+      <rect x="22" y="6" width="12" height="8"/>
+      <rect x="22" y="42" width="12" height="8"/>
+      <rect x="6" y="22" width="8" height="12"/>
+      <rect x="42" y="22" width="8" height="12"/>
+    </g>
+    <!-- autumn leaf -->
+    <g fill="#c46a3a" transform="translate(264 0)">
+      <rect x="20" y="14" width="20" height="12"/>
+      <rect x="14" y="26" width="28" height="12"/>
+      <rect x="24" y="38" width="8" height="16"/>
+    </g>
+    <!-- winter -->
+    <g fill="#d5e0ea" transform="translate(396 0)">
+      <rect x="24" y="8" width="8" height="40"/>
+      <rect x="8" y="24" width="40" height="8"/>
+      <rect x="14" y="14" width="8" height="8"/>
+      <rect x="34" y="14" width="8" height="8"/>
+      <rect x="14" y="34" width="8" height="8"/>
+      <rect x="34" y="34" width="8" height="8"/>
+    </g>
+  </g>
+</svg>
