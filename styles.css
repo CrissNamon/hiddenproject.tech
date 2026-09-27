@@ -430,7 +430,7 @@ h1 {
   margin: 0;
 }
 
-.tower {
+.showcase {
   display: grid;
   grid-template-columns: minmax(0, 1fr) min(320px, 34%);
   grid-template-areas:
@@ -440,26 +440,27 @@ h1 {
   align-items: start;
 }
 
-.tower > * {
+.showcase > * {
   min-width: 0;
 }
 
+.showcase .project-copy,
 .tower-intro {
   grid-area: intro;
 }
 
-.tower .facts {
+.showcase .facts {
   grid-area: facts;
 }
 
-.tower .gallery {
+.showcase .gallery {
   grid-area: shots;
   position: sticky;
   top: calc(var(--header) + 1.25rem);
   margin-top: 0.35rem;
 }
 
-.tower .shot {
+.showcase .shot {
   flex-basis: 86%;
 }
 
@@ -574,8 +575,7 @@ h1 {
 .shot img {
   display: block;
   width: 100%;
-  aspect-ratio: 9 / 20;
-  object-fit: cover;
+  height: auto;
   border-radius: 1.15rem;
   background: #000;
 }
@@ -763,23 +763,23 @@ h1 {
   .hero-grid,
   .project-split,
   .studio-grid,
-  .tower {
+  .showcase {
     grid-template-columns: 1fr;
   }
 
-  .tower {
+  .showcase {
     grid-template-areas:
       "intro"
       "shots"
       "facts";
   }
 
-  .tower .gallery {
+  .showcase .gallery {
     position: static;
     margin-top: 1.75rem;
   }
 
-  .tower .shot {
+  .showcase .shot {
     flex-basis: min(270px, 74vw);
   }
 

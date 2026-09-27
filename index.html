@@ -119,7 +119,7 @@
 
       <section id="projects" aria-label="Projects in development">
         <div class="wrap">
-          <article class="project tower" id="tower">
+          <article class="project showcase" id="tower">
             <div class="tower-intro project-copy">
               <p class="kicker">01 · Online idle RPG · Working title</p>
               <h2>The Tower</h2>
@@ -187,69 +187,127 @@
             </dl>
           </article>
 
-          <article class="project project-split" id="book-tracker">
+          <article class="project showcase" id="book-tracker">
             <div class="project-copy">
               <p class="kicker">02 · Reading log · Working title</p>
               <h2>Book Tracker</h2>
               <p>For the book that is open, not the pile you mean to start. Log a session, hold the streak, and write a short summary while the chapter is still in your head. The stats sit next to the log, so the habit is something you can see.</p>
-              <dl class="facts">
-                <div>
-                  <dt>Progress</dt>
-                  <dd>How far you are in the books you are actually reading.</dd>
-                </div>
-                <div>
-                  <dt>Streak</dt>
-                  <dd>The days in a row you log.</dd>
-                </div>
-                <div>
-                  <dt>Summary</dt>
-                  <dd>A short note written with each log.</dd>
-                </div>
-                <div>
-                  <dt>Stats</dt>
-                  <dd>The reading, counted, instead of guessed at.</dd>
-                </div>
-              </dl>
             </div>
-            <figure class="poster">
-              <img src="assets/book.svg" width="640" height="720" alt="An open reading log with a progress bar, a summary note on the page, a pencil, and a streak of logged days.">
-              <figcaption>Progress, a summary, and a streak</figcaption>
-            </figure>
+            <div class="gallery">
+              <div class="gallery-bar">
+                <p class="pixel">Development build</p>
+                <div class="gallery-nav">
+                  <span class="counter" data-counter aria-live="polite">1 / 3</span>
+                  <button class="pixel-btn" type="button" data-prev>Prev</button>
+                  <button class="pixel-btn" type="button" data-next>Next</button>
+                </div>
+              </div>
+              <div class="gallery-scroller" data-scroller tabindex="0" aria-label="Book Tracker screenshots">
+                <figure class="shot">
+                  <button type="button" data-shot data-caption="The books open right now">
+                    <img src="assets/book-home.webp" width="1080" height="2132" alt="Development screenshot of Book Tracker. A one-day streak, the books currently being read, and a log button on each." loading="lazy">
+                  </button>
+                  <figcaption aria-hidden="true">The books open right now</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button type="button" data-shot data-caption="A note with the pages">
+                    <img src="assets/book-log.webp" width="1080" height="2132" alt="Development screenshot of a Book Tracker reading log. Pages logged today, a short note, and a button to log more pages." loading="lazy">
+                  </button>
+                  <figcaption aria-hidden="true">A note with the pages</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button type="button" data-shot data-caption="Streaks and pages per day">
+                    <img src="assets/book-stats.webp" width="1080" height="2132" alt="Development screenshot of Book Tracker stats. Current streak, best streak, reflected days, streak freezes, and pages read per day." loading="lazy">
+                  </button>
+                  <figcaption aria-hidden="true">Streaks and pages per day</figcaption>
+                </figure>
+              </div>
+            </div>
+            <dl class="facts">
+              <div>
+                <dt>Progress</dt>
+                <dd>How far you are in the books you are actually reading.</dd>
+              </div>
+              <div>
+                <dt>Streak</dt>
+                <dd>The days in a row you log.</dd>
+              </div>
+              <div>
+                <dt>Summary</dt>
+                <dd>A short note written with each log.</dd>
+              </div>
+              <div>
+                <dt>Stats</dt>
+                <dd>The reading, counted, instead of guessed at.</dd>
+              </div>
+            </dl>
           </article>
 
-          <article class="project project-split reverse" id="the-jar">
+          <article class="project showcase" id="the-jar">
             <div class="project-copy">
               <p class="kicker">03 · Merge and idle · Placeholder title</p>
               <h2>The Jar</h2>
               <p class="working-note">Placeholder name. The real title is not chosen yet.</p>
               <p>Fungus, seeds, and eggs go into a jar and merge until something new evolves. The jar keeps time: seasons change, and the day gives way to night. A codex records what you have grown. Modifiers bend the rules of a run.</p>
-              <dl class="facts">
-                <div>
-                  <dt>Merge</dt>
-                  <dd>Fungus, seeds, and eggs combine inside the jar.</dd>
-                </div>
-                <div>
-                  <dt>Evolution</dt>
-                  <dd>Merges turn into new forms.</dd>
-                </div>
-                <div>
-                  <dt>Time</dt>
-                  <dd>Seasons, and a day and night cycle.</dd>
-                </div>
-                <div>
-                  <dt>Codex</dt>
-                  <dd>What has appeared, written down.</dd>
-                </div>
-                <div>
-                  <dt>Modifiers</dt>
-                  <dd>Rules that change from run to run.</dd>
-                </div>
-              </dl>
             </div>
-            <figure class="poster">
-              <img src="assets/jar.svg" width="640" height="800" alt="A glass jar holding fungus, a seed, an egg, and a new sprout. The background is split between day and night, with spring, summer, autumn, and winter marks underneath.">
-              <figcaption>Day, night, and four seasons</figcaption>
-            </figure>
+            <div class="gallery">
+              <div class="gallery-bar">
+                <p class="pixel">Development build</p>
+                <div class="gallery-nav">
+                  <span class="counter" data-counter aria-live="polite">1 / 4</span>
+                  <button class="pixel-btn" type="button" data-prev>Prev</button>
+                  <button class="pixel-btn" type="button" data-next>Next</button>
+                </div>
+              </div>
+              <div class="gallery-scroller" data-scroller tabindex="0" aria-label="The Jar screenshots">
+                <figure class="shot">
+                  <button type="button" data-shot data-caption="Seeds, eggs, and fungus in the jar">
+                    <img src="assets/jar-board.webp" width="1080" height="2400" alt="Development screenshot of the jar. A grid of merged creatures during a bloom season, with seeds, eggs, and fungus ready to place." loading="lazy">
+                  </button>
+                  <figcaption aria-hidden="true">Seeds, eggs, and fungus</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button type="button" data-shot data-caption="Upgrades for the jar and what it grows">
+                    <img src="assets/jar-upgrades.webp" width="1080" height="2400" alt="Development screenshot of jar upgrades: faster spawning, a bigger pouch, better seeds, a wider jar, a longer nap, and unstable DNA." loading="lazy">
+                  </button>
+                  <figcaption aria-hidden="true">Upgrades for the jar</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button type="button" data-shot data-caption="A codex of what has grown">
+                    <img src="assets/jar-codex.webp" width="1080" height="2400" alt="Development screenshot of the jar codex. Discovered flora across tiers, and a catalyst that makes the next merge mutate." loading="lazy">
+                  </button>
+                  <figcaption aria-hidden="true">A codex of what has grown</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button type="button" data-shot data-caption="Seasons, and the seeds they leave">
+                    <img src="assets/jar-seasons.webp" width="1080" height="2400" alt="Development screenshot of jar seasons. Bloom is active, ending the season pays seeds, and seed skills sit underneath." loading="lazy">
+                  </button>
+                  <figcaption aria-hidden="true">Seasons, and the seeds they leave</figcaption>
+                </figure>
+              </div>
+            </div>
+            <dl class="facts">
+              <div>
+                <dt>Merge</dt>
+                <dd>Fungus, seeds, and eggs combine inside the jar.</dd>
+              </div>
+              <div>
+                <dt>Evolution</dt>
+                <dd>Merges turn into new forms.</dd>
+              </div>
+              <div>
+                <dt>Time</dt>
+                <dd>Seasons, and a day and night cycle.</dd>
+              </div>
+              <div>
+                <dt>Codex</dt>
+                <dd>What has appeared, written down.</dd>
+              </div>
+              <div>
+                <dt>Modifiers</dt>
+                <dd>Rules that change from run to run.</dd>
+              </div>
+            </dl>
           </article>
         </div>
       </section>
