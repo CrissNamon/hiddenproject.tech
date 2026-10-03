@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Tower: Endless Climb RPG</title>
+<meta name="description" content="An endless tower that climbs while you're away. Turn-based boss fights, pixel art, no account. Free on Google Play.">
+<meta name="theme-color" content="#0D0F10">
+<meta property="og:title" content="The Tower: Endless Climb RPG">
+<meta property="og:description" content="An endless tower that climbs while you're away. Turn-based boss fights. No account.">
+<meta property="og:image" content="feature-graphic.png">
+<link rel="icon" href="icon.png">
+<!--
+  Landing for ads. Host this folder as is: hiddenproject.tech/the-tower/google-play/.
+  The art and fonts are written by `cd client && dart run tool/landing.dart`.
+
+  On Android it opens the Play Store right away (once per visit, so coming back
+  shows the page instead of bouncing again). Everywhere else, and if the store
+  didn't open, the page and its button stay.
+
+  UTM parameters on the page link (?utm_source=instagram&utm_campaign=…) are
+  passed on as the Play install referrer.
+-->
+<style>
+  @font-face { font-family: Silkscreen; src: url(Silkscreen-Bold.ttf); font-weight: 700; font-display: swap; }
+  :root {
+    /* The game's palette (lib/ui/theme.dart), and one darker ember for the button's edge. */
+    --stone: #0D0F10; --stone-light: #14171A; --edge: #24282C;
+    --ember: #B87A3E; --ember-deep: #7A5129; --rime: #6B8C9C;
+    --bone: #D6D2C8; --dim: #7E8288; --moss: #6F895C;
+    --pixel: Silkscreen, system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--stone); }
+  body {
+    margin: 0; min-height: 100vh; color: var(--bone); background: var(--stone);
+    font: 17px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  /* A few square stars, like the banner's sky; and the ember glow from above. */
+  .sky {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(184, 122, 62, .18), transparent 60%);
+  }
+  .stars {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .6;
+    background-image:
+      linear-gradient(var(--bone), var(--bone)), linear-gradient(var(--rime), var(--rime)),
+      linear-gradient(var(--bone), var(--bone)), linear-gradient(var(--rime), var(--rime)),
+      linear-gradient(var(--bone), var(--bone)), linear-gradient(var(--rime), var(--rime));
+    background-size: 4px 4px;
+    background-repeat: no-repeat;
+    background-position: 8% 6%, 88% 12%, 22% 30%, 76% 38%, 94% 64%, 6% 72%;
+  }
+  main {
+    position: relative; z-index: 1; max-width: 480px; margin: 0 auto;
+    padding: max(28px, env(safe-area-inset-top)) 16px calc(120px + env(safe-area-inset-bottom));
+    text-align: center;
+  }
+  img.px { image-rendering: pixelated; image-rendering: crisp-edges; }
+  .icon { width: 128px; height: 128px; border-radius: 24px; display: block; margin: 0 auto 16px; }
+  h1 {
+    font: 700 40px/1.1 var(--pixel); letter-spacing: 4px; margin: 0 0 8px;
+  }
+  .tagline { font: 700 16px/1.4 var(--pixel); color: var(--ember); margin: 0 0 24px; letter-spacing: 1px; }
+  .cta {
+    display: block; width: 100%; padding: 18px 16px; border: 0; border-radius: 6px;
+    background: var(--ember); color: var(--stone); box-shadow: 0 6px 0 var(--ember-deep);
+    font: 700 clamp(14px, 4.6vw, 20px)/1.2 var(--pixel); text-decoration: none; cursor: pointer; white-space: nowrap;
+  }
+  .cta:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--ember-deep); }
+  .cta small { display: block; font: 600 13px/1.4 system-ui, sans-serif; letter-spacing: 0; opacity: .8; margin-top: 4px; }
+  .note { color: var(--dim); font-size: 14px; margin: 14px 0 0; min-height: 1.5em; }
+  .critters {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin: 32px 0 0; padding: 0 4px 6px; border-bottom: 4px solid var(--edge);
+    box-shadow: 0 12px 0 var(--stone-light);
+  }
+  .critters img { width: 54px; height: 54px; }
+  ul.features { list-style: none; padding: 0; margin: 32px 0 0; text-align: left; }
+  .features li {
+    background: var(--stone-light); border: 1px solid var(--edge); border-radius: 12px;
+    padding: 14px 16px; margin: 0 0 10px;
+  }
+  .features b { display: block; font: 700 14px/1.4 var(--pixel); color: var(--ember); letter-spacing: 1px; margin-bottom: 2px; }
+  .features span { color: var(--dim); font-size: 15px; }
+  footer { margin-top: 32px; color: var(--dim); font-size: 13px; }
+  footer a { color: var(--rime); }
+  .sticky {
+    position: fixed; z-index: 2; left: 0; right: 0; bottom: 0;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    background: linear-gradient(transparent, var(--stone) 30%);
+    transform: translateY(110%); transition: transform .25s;
+  }
+  .sticky.on { transform: none; }
+  .sticky .cta { max-width: 448px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<div class="sky"></div>
+<div class="stars"></div>
+<main>
+  <img class="icon px" src="icon.png" width="128" height="128" alt="">
+  <h1>THE TOWER</h1>
+  <p class="tagline">Climb. Fight. Climb higher.</p>
+
+  <a class="cta" id="cta" href="https://play.google.com/store/apps/details?id=tech.hiddenproject.thetower">
+    <span>Get it on Google Play</span>
+    <small>Free · no sign-up</small>
+  </a>
+  <p class="note" id="note" aria-live="polite"></p>
+
+  <div class="critters" aria-hidden="true">
+    <img class="px" src="hound.png" alt="">
+    <img class="px" src="emberjaw.png" alt="">
+    <img class="px" src="rimewidow.png" alt="">
+    <img class="px" src="sister.png" alt="">
+    <img class="px" src="gravebloom.png" alt="">
+  </div>
+
+  <ul class="features">
+    <li><b>Climbs while you're away</b><span>Gold piles up for hours with the game closed. Come back, claim it, and turn over what you found.</span></li>
+    <li><b>A boss on every floor</b><span>Turn-based fights: spend energy, watch your cooldowns, and interrupt the big hit before it lands.</span></li>
+    <li><b>Three doors, five biomes</b><span>Every floor up is a choice, from the Ashlands to the Obsidian Gate. The safe door pays less.</span></li>
+    <li><b>Nothing to buy</b><span>No account, no internet needed. No premium currency, no energy timers, no way to pay past a fight.</span></li>
+  </ul>
+
+  <footer>
+    <a href="https://hiddenproject.tech/the-tower/privacy-policy/">Privacy policy</a>
+  </footer>
+</main>
+
+<div class="sticky" id="sticky">
+  <a class="cta" id="cta2" href="https://play.google.com/store/apps/details?id=tech.hiddenproject.thetower">
+    <span>Get it on Google Play</span>
+  </a>
+</div>
+
+<script>
+(function () {
+  var PKG = 'tech.hiddenproject.thetower';
+
+  var t = {
+    opening: 'Opening Google Play…',
+    notAndroid: 'The Tower is on Android for now.'
+  };
+
+  var params = new URLSearchParams(location.search);
+
+  // UTM parameters from the ad link become the Play install referrer.
+  var ref = new URLSearchParams();
+  params.forEach(function (value, key) { if (/^utm_/.test(key)) ref.set(key, value); });
+  if (!ref.has('utm_source')) ref.set('utm_source', 'instagram');
+  if (!ref.has('utm_medium')) ref.set('utm_medium', 'landing');
+  var query = 'id=' + PKG + '&referrer=' + encodeURIComponent(ref.toString());
+
+  var market = 'market://details?' + query;
+  var web = 'https://play.google.com/store/apps/details?' + query;
+  var ua = navigator.userAgent || '';
+  var android = /Android/i.test(ua);
+
+  var ctas = [document.getElementById('cta'), document.getElementById('cta2')];
+  ctas.forEach(function (a) { a.href = android ? market : web; });
+
+  // A sticky button once the first one scrolls away.
+  var sticky = document.getElementById('sticky');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      sticky.classList.toggle('on', !entries[0].isIntersecting);
+    }).observe(document.getElementById('cta'));
+  }
+
+  var note = document.getElementById('note');
+  if (!android) {
+    if (/iPhone|iPad|iPod/i.test(ua)) note.textContent = t.notAndroid;
+    return;
+  }
+
+  // If the Play Store app can't take the market:// link, the web store can.
+  ctas.forEach(function (a) {
+    a.addEventListener('click', function () {
+      var left = false;
+      var onHide = function () { left = true; };
+      document.addEventListener('visibilitychange', onHide, { once: true });
+      setTimeout(function () {
+        document.removeEventListener('visibilitychange', onHide);
+        if (!left && !document.hidden) location.href = web;
+      }, 1500);
+    });
+  });
+
+  // Open the store straight away, once per visit: back from the store, the
+  // page stays.
+  var seen = false;
+  try { seen = sessionStorage.getItem('the-tower-redirected') === '1'; } catch (e) {}
+  if (!seen) {
+    try { sessionStorage.setItem('the-tower-redirected', '1'); } catch (e) {}
+    note.textContent = t.opening;
+    setTimeout(function () { location.href = market; }, 50);
+    setTimeout(function () { note.textContent = ''; }, 2500);
+  }
+
+})();
+</script>
+</body>
+</html>
