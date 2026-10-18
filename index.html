@@ -27,7 +27,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/dance-hero.jpg" as="image">
+    <link rel="preload" href="assets/darkness-hero.jpg" as="image">
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
       {
@@ -76,15 +76,25 @@
               </ul>
             </div>
             <figure class="phone hero-phone">
-              <img src="assets/dance-hero.jpg" width="1080" height="2400" alt="Dance CATharsis village at night: a cat band on the stage deck, cats resting on the grass and the band lineup below." fetchpriority="high">
-              <figcaption>Dance CATharsis</figcaption>
+              <img src="assets/darkness-hero.jpg" width="1080" height="2400" alt="The Outer Darkness ship scanner: a green radar screen with a sweeping beam and three derelict ships as contacts around your ship at the centre." fetchpriority="high">
+              <figcaption>The Outer Darkness</figcaption>
             </figure>
           </div>
 
           <ol class="codex">
             <li class="is-current">
-              <a href="#dance-catharsis">
+              <a href="#the-outer-darkness">
                 <span class="num">01</span>
+                <span>
+                  <span class="name">The Outer Darkness</span>
+                  <em class="kind">Sci-fi roguelike</em>
+                </span>
+                <span class="state">Coming soon</span>
+              </a>
+            </li>
+            <li>
+              <a href="#dance-catharsis">
+                <span class="num">02</span>
                 <span>
                   <span class="name">Dance CATharsis</span>
                   <em class="kind">Rhythm and cats</em>
@@ -94,7 +104,7 @@
             </li>
             <li>
               <a href="#the-jar">
-                <span class="num">02</span>
+                <span class="num">03</span>
                 <span>
                   <span class="name">The Jar</span>
                   <em class="kind">Merge and idle</em>
@@ -104,7 +114,7 @@
             </li>
             <li>
               <a href="#tower">
-                <span class="num">03</span>
+                <span class="num">04</span>
                 <span>
                   <span class="name">The Tower: Endless Climb RPG</span>
                   <em class="kind">Idle RPG</em>
@@ -118,9 +128,83 @@
 
       <section id="projects" aria-label="Projects in development">
         <div class="wrap">
+          <article class="project showcase" id="the-outer-darkness">
+            <div class="project-copy">
+              <p class="kicker">01 · Sci-fi roguelike · Game</p>
+              <h2>The Outer Darkness</h2>
+              <p>Dead ships drift back out of the dark with their holds full and their crews still aboard. Pick a derelict on your scanner, board it, and fight your way deck by deck to the escape shuttle. Aim each shot at a body part, take what you can carry, and get out. Die, and everything you brought stays aboard.</p>
+              <ul class="stores">
+                <li><span class="pip pip-empty" aria-hidden="true"></span> Google Play · coming soon</li>
+              </ul>
+            </div>
+            <div class="gallery">
+              <div class="gallery-bar">
+                <div class="gallery-nav">
+                  <span class="counter" data-counter aria-live="polite">1 / 5</span>
+                  <button class="pixel-btn" type="button" data-prev>Prev</button>
+                  <button class="pixel-btn" type="button" data-next>Next</button>
+                </div>
+              </div>
+              <div class="gallery-scroller" data-scroller tabindex="0" aria-label="The Outer Darkness screenshots">
+                <figure class="shot">
+                  <button type="button" data-shot data-caption="Aim for the weak point">
+                    <img src="assets/darkness-fight.jpg" width="1080" height="1920" alt="A fight in The Outer Darkness: a Stalker with its body parts and hit chances, the fight log in green and red, and the FIRE bar for a rivet shot." loading="lazy">
+                  </button>
+                  <figcaption aria-hidden="true">Aim for the weak point</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button type="button" data-shot data-caption="Every ship is a gamble">
+                    <img src="assets/darkness-contact.jpg" width="1080" height="1920" alt="A derelict contact card: the ore hauler MV Tallow drawn in text, an Infested reading and one unknown reading, and a BOARD button." loading="lazy">
+                  </button>
+                  <figcaption aria-hidden="true">Every ship is a gamble</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button type="button" data-shot data-caption="Map the decks">
+                    <img src="assets/darkness-map.jpg" width="1080" height="1920" alt="The ship map: rooms in layers from the docking airlock to the escape shuttle, the way taken lit green, unknown rooms marked with question marks." loading="lazy">
+                  </button>
+                  <figcaption aria-hidden="true">Map the decks</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button type="button" data-shot data-caption="Answer the voice, or leave">
+                    <img src="assets/darkness-event.jpg" width="1080" height="1920" alt="An event in the comms room, drawn in text, with the words LET US IN on the screens and a choice to answer." loading="lazy">
+                  </button>
+                  <figcaption aria-hidden="true">Answer the voice, or leave</figcaption>
+                </figure>
+                <figure class="shot">
+                  <button type="button" data-shot data-caption="Die, and it all stays aboard">
+                    <img src="assets/darkness-death.jpg" width="1080" height="1920" alt="The death screen: the escape shuttle drawn in red, SIGNAL LOST, and the cargo lost with you." loading="lazy">
+                  </button>
+                  <figcaption aria-hidden="true">Die, and it all stays aboard</figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <dl class="facts">
+              <div>
+                <dt>Scanner</dt>
+                <dd>Derelicts in range on a green radar, each with its size, threat and conditions.</dd>
+              </div>
+              <div>
+                <dt>Boarding</dt>
+                <dd>A new seeded ship every run: fights, loot, supplies and event rooms.</dd>
+              </div>
+              <div>
+                <dt>Aimed combat</dt>
+                <dd>Turn-based rounds with action points. Shoot a part to cripple it.</dd>
+              </div>
+              <div>
+                <dt>Extraction</dt>
+                <dd>Reach the shuttle with your cargo, or lose it and the gear you took.</dd>
+              </div>
+              <div>
+                <dt>Your ship</dt>
+                <dd>Sell salvage, buy gear and upgrade the scanner, cargo hold, jump drive and vault.</dd>
+              </div>
+            </dl>
+          </article>
           <article class="project showcase" id="dance-catharsis">
             <div class="project-copy">
-              <p class="kicker">01 · Rhythm and cats · Game</p>
+              <p class="kicker">02 · Rhythm and cats · Game</p>
               <h2>Dance CATharsis</h2>
               <p>A cat band plays gigs for a cozy pixel village. Each cat is one instrument and one lane: tap the paw notes in time, and a missed note mutes that cat until you hit again, so you hear every mistake. Strays wander in to the edge of town, and a dance-off decides if they join.</p>
               <ul class="stores">
@@ -188,7 +272,7 @@
           </article>
           <article class="project showcase" id="the-jar">
             <div class="project-copy">
-              <p class="kicker">02 · Merge and idle · Game</p>
+              <p class="kicker">03 · Merge and idle · Game</p>
               <h2>Jarlife: Merge Terrarium</h2>
               <p>Fungus, seeds, and eggs go into a jar and merge until something new evolves. The jar keeps time: seasons change, and the day gives way to night. A codex records what you have grown. Modifiers bend the rules of a run.</p>
               <ul class="stores">
@@ -256,7 +340,7 @@
           </article>
           <article class="project showcase" id="tower">
             <div class="tower-intro project-copy">
-              <p class="kicker">03 · Idle RPG · Game</p>
+              <p class="kicker">04 · Idle RPG · Game</p>
               <h2>The Tower: Endless Climb RPG</h2>
               <p>How far can you climb?</p>
               <ul class="stores">
