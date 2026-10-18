@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy · The Outer Darkness</title>
-<meta name="description" content="The Outer Darkness keeps your game on your phone. It has no account and no analytics. Rewarded ads come from Appodeal, and installs and ad revenue are measured by Singular.">
+<meta name="description" content="The Outer Darkness keeps your game on your phone and has no account. It sends crash reports and gameplay statistics to Firebase, rewarded ads come from Appodeal, and installs and ad revenue are measured by Singular.">
 <link rel="canonical" href="https://hiddenproject.tech/the-outer-darkness/privacy-policy/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,11 +77,12 @@
   <p class="meta">The Outer Darkness, for Android · Effective 18 October 2026</p>
 
   <p class="summary">
-    The Outer Darkness has no account, no server of its own and no analytics. Your
-    ship, your gear and your runs are saved on your phone. Two services receive data
-    from the game: <strong>Appodeal</strong>, which serves the optional rewarded video
-    ads, and <strong>Singular</strong>, which measures where installs come from and how
-    much the ads earn.
+    The Outer Darkness has no account and no server of its own. Your ship, your gear
+    and your runs are saved on your phone. Three services receive data from the game:
+    Google's <strong>Firebase</strong>, which collects crash reports and statistics on
+    how the game is played; <strong>Appodeal</strong>, which serves the optional
+    rewarded video ads; and <strong>Singular</strong>, which measures where installs
+    come from and how much the ads earn.
   </p>
 
   <h2>Who we are</h2>
@@ -104,8 +105,50 @@
     </li>
   </ul>
   <p>
-    The game sends none of this anywhere. Uninstalling the app, or clearing its storage
-    in your phone's settings, deletes it.
+    The save itself is never sent anywhere. Uninstalling the app, or clearing its
+    storage in your phone's settings, deletes it.
+  </p>
+
+  <h2>Crash reports</h2>
+  <p>
+    If the game crashes or hits an error, it sends a report to Firebase Crashlytics, a
+    service run by Google for us. A report contains the error and where in the game's
+    code it happened; your phone's model, operating system version and state at the
+    time, such as free memory; the game's version; and a random identifier for this
+    installation, so that repeat crashes on one phone count as one. That identifier is
+    not linked to you or your Google account, and it changes if you reinstall the game.
+    Crashlytics also notes when the game is opened, so it can tell what share of
+    sessions end in a crash.
+  </p>
+  <p>
+    We use crash reports only to find and fix bugs. Google keeps them for 90 days and
+    processes them under the
+    <a href="https://firebase.google.com/support/privacy">Firebase privacy terms</a>.
+  </p>
+
+  <h2>Gameplay statistics</h2>
+  <p>
+    The game uses Google Analytics for Firebase to learn how it is played, so it can be
+    balanced and improved. It records events such as a boarding started or ended, a
+    fight won or lost, an event choice, an item used or bought, an upgrade, the intro
+    finished or skipped, and a rewarded ad watched. Each event carries game details
+    only, such as which kind of derelict, how many turns, or which ad offer. Analytics
+    also receives, from your phone:
+  </p>
+  <ul>
+    <li>an app instance ID, a random identifier for this installation;</li>
+    <li>your device's <strong>advertising ID</strong>, where your phone allows it;</li>
+    <li>technical details: your phone's model, operating system, language, screen and
+      the app's version;</li>
+    <li>a rough location, such as your country, worked out from your IP address;</li>
+    <li>when and for how long the game is used;</li>
+    <li>for each ad shown, the revenue it earned and the ad network that served it.</li>
+  </ul>
+  <p>
+    We see these as statistics across all players, not as a record of you. We do not
+    sell them or use them to advertise to you. They are processed by Google under the
+    <a href="https://firebase.google.com/support/privacy">Firebase privacy terms</a>
+    and <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
   </p>
 
   <h2>Ads</h2>
@@ -184,7 +227,7 @@
       to access or delete data about you, or to object to its use. We hold no data about
       you ourselves. Write to
       <a href="mailto:support@hiddenproject.tech">support@hiddenproject.tech</a> and we
-      will pass your request on to Singular and Appodeal. Include your advertising ID if
+      will pass your request on to Google, Singular and Appodeal. Include your advertising ID if
       you can, since that is how they can find your data.
     </li>
   </ul>
@@ -214,9 +257,9 @@
 
   <h2>Changes to this policy</h2>
   <p>
-    If a future version of the game handles data differently, for example by adding
-    analytics, crash reporting or a new ad network, this policy will be updated before
-    that version is released, and the date at the top will change with it.
+    If a future version of the game handles data differently, for example by adding a
+    new ad network or another service, this policy will be updated before that version
+    is released, and the date at the top will change with it.
   </p>
 
   <footer>
