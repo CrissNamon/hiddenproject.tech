@@ -33,42 +33,42 @@
     - Move through a dead ship room by room. You keep only what you carry out, and every step deeper raises the stakes. Low oxygen, darkness and infestations change the rules from one ship to the next.
     - Built for your phone. One-handed portrait play, 5–15 minutes a boarding, and runs that save when you stop. No pay-to-win.
   shots:
-    - src: /the-outer-darkness/shot-01.jpg
+    - src: /the-outer-darkness/shot-01.webp
       width: 540
       height: 960
       caption: Aim for the weak point
       alt: A fight with a Stalker, with a hit chance for each body part.
-    - src: /the-outer-darkness/shot-03.jpg
+    - src: /the-outer-darkness/shot-03.webp
       width: 540
       height: 960
       caption: Scan the dark, board the derelict
       alt: The ship scanner with derelicts around you.
-    - src: /the-outer-darkness/shot-02.jpg
+    - src: /the-outer-darkness/shot-02.webp
       width: 540
       height: 960
       caption: Mod your weapons
       alt: A weapon with its mod slots.
-    - src: /the-outer-darkness/shot-05.jpg
+    - src: /the-outer-darkness/shot-05.webp
       width: 540
       height: 960
       caption: Answer the voice, or leave quickly
       alt: An event aboard a derelict.
-    - src: /the-outer-darkness/shot-04.jpg
+    - src: /the-outer-darkness/shot-04.webp
       width: 540
       height: 960
       caption: Crack open a crate
       alt: A rare find in the Salvage Lottery.
-    - src: /the-outer-darkness/shot-06.jpg
+    - src: /the-outer-darkness/shot-06.webp
       width: 540
       height: 960
       caption: What silenced the colonies?
       alt: A recovered tape.
-    - src: /the-outer-darkness/shot-07.jpg
+    - src: /the-outer-darkness/shot-07.webp
       width: 540
       height: 960
       caption: Die, and it all stays aboard
       alt: A lost run.
-    - src: /the-outer-darkness/shot-08.jpg
+    - src: /the-outer-darkness/shot-08.webp
       width: 540
       height: 960
       caption: Sell, upgrade, go back out
@@ -107,22 +107,22 @@
     - A cat band plays gigs for a cozy pixel village. Each cat is one instrument and one lane. Tap the paw notes in time. A missed note mutes that cat until you hit again, so you hear every mistake.
     - Strays wander in to the edge of town, and a dance-off decides if they join. Between gigs, the band rests in the village and busks for tips.
   shots:
-    - src: /assets/dance-gig.jpg
+    - src: /assets/dance-gig.webp
       width: 1080
       height: 1920
       caption: A gig at the drop
       alt: A Dance CATharsis gig. Four cats play drums, bass, keys and lead in four lanes, paw notes fall toward the rings, and Catharsis doubles the score.
-    - src: /assets/dance-village.jpg
+    - src: /assets/dance-village.webp
       width: 1080
       height: 1920
       caption: The village
       alt: "The Dance CATharsis village at night: houses with string lights, a stage deck with the band, cats resting on the grass and a DJ cat in the corner."
-    - src: /assets/dance-danceoff.jpg
+    - src: /assets/dance-danceoff.webp
       width: 1080
       height: 1920
       caption: A dance-off with a stray
       alt: "A Dance CATharsis dance-off: a stray cat dances to its own loop while the player taps along to win it over."
-    - src: /assets/dance-card.jpg
+    - src: /assets/dance-card.webp
       width: 1080
       height: 1920
       caption: Every cat has its own dance

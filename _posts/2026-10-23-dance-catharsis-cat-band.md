@@ -8,7 +8,7 @@ game: dance-catharsis
 
 Dance CATharsis is a rhythm game about a cat band playing gigs for a cozy pixel village. It's out now on Google Play.
 
-<img src="/assets/dance-gig.jpg" width="320" height="569" alt="A Dance CATharsis gig. Four cats play drums, bass, keys and lead in four lanes, and paw notes fall toward the rings." loading="lazy">
+<img src="/assets/dance-gig.webp" width="320" height="569" alt="A Dance CATharsis gig. Four cats play drums, bass, keys and lead in four lanes, and paw notes fall toward the rings." loading="lazy">
 
 ## Four cats, four lanes
 
