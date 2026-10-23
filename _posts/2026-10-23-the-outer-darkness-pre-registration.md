@@ -1,12 +1,13 @@
 ---
 title: The Outer Darkness is open for pre-registration
+date: 2026-10-23 14:00:00 +0400
 description: A new sci-fi roguelike about boarding dead ships. Pre-register on Google Play, or find it on the App Store.
 game: the-outer-darkness
 ---
 
-This is the first post on the new Hidden Project blog. Each game now has its own page on the site, and this is where I'll write about them as they're made: releases, updates, and how things work inside.
+Each game now has its own page on the site, and this blog is where I'll write about them as they're made: releases, updates, and how things work inside.
 
-The first news is The Outer Darkness. It's open for pre-registration on Google Play, and it's on the App Store for iPhone and iPad.
+The latest news is The Outer Darkness. It's open for pre-registration on Google Play, and it's on the App Store for iPhone and iPad.
 
 ## Dock. Loot. Get out.
 
