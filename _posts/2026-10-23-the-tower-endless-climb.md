@@ -1,5 +1,6 @@
 ---
 title: "The Tower: how far can you climb?"
+seo_title: "The Tower: An Idle RPG About How Far You Can Climb"
 date: 2026-10-23 13:00:00 +0400
 description: An endless tower with a fight on every floor, three doors after each one, and gold that piles up while you're away. Out now on Google Play.
 game: the-tower

@@ -1,5 +1,6 @@
 ---
 title: "Dance CATharsis: a cat band that hears every miss"
+seo_title: "Dance CATharsis: A Cat Band Rhythm Game Where Every Miss Counts"
 date: 2026-10-23 12:00:00 +0400
 description: A rhythm game where each cat plays one instrument in one lane, and a missed note mutes that cat. Out now on Google Play.
 game: dance-catharsis
@@ -29,4 +30,4 @@ Between gigs, the band goes home. Resting cats busk for tips, and requests and u
 
 You can record a vertical clip of a gig or of a cat's dance and share it.
 
-Dance CATharsis is on [Google Play](https://play.google.com/store/apps/details?id=tech.hiddenproject.dancecatharsis). More screenshots are on the [game page](/dance-catharsis/).
+Dance CATharsis is free on [Google Play](https://play.google.com/store/apps/details?id=tech.hiddenproject.dancecatharsis). More screenshots are on the [game page](/dance-catharsis/).

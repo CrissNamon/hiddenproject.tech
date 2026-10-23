@@ -1,5 +1,6 @@
 ---
 title: The Outer Darkness is open for pre-registration
+seo_title: "The Outer Darkness: Sci-Fi Roguelike Open for Pre-Registration"
 date: 2026-10-23 14:00:00 +0400
 description: A new sci-fi roguelike about boarding dead ships. Pre-register on Google Play, or find it on the App Store.
 game: the-outer-darkness

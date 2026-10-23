@@ -17,9 +17,11 @@ Add `_posts/YYYY-MM-DD-short-title.md`. It is served at `/blog/short-title/`:
 ```markdown
 ---
 title: The title
-description: One or two sentences for the blog list, the feed and link previews.
+seo_title: "The title in search results"  # optional: the game's name and genre, up to about 60 characters
+description: One or two sentences for the blog list, the feed and link previews. Up to about 160 characters.
 game: the-outer-darkness   # optional: links the post to a game page and uses its colour and art
 image: /assets/og.png      # optional: the link preview image (defaults to the game's feature graphic)
+image_alt: What the image shows  # optional, with image
 ---
 
 The post, in Markdown.

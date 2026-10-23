@@ -1,5 +1,6 @@
 ---
 title: "Jarlife: a terrarium that grows while you're away"
+seo_title: "Jarlife: A Merge Terrarium Game That Grows While You're Away"
 date: 2026-10-23 12:30:00 +0400
 description: Merge spores, seeds and eggs into 120 creatures, and come back to see what the jar did without you. Out now on Google Play.
 game: jarlife
