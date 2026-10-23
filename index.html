@@ -1,69 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hidden Project</title>
-    <meta name="description" content="Hidden Project - mobile apps and games">
-    <meta name="author" content="Danila Rassokhin">
-    <meta name="theme-color" content="#0e1012">
-    <meta name="color-scheme" content="dark">
-    <link rel="canonical" href="https://hiddenproject.tech/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Hidden Project">
-    <meta property="og:title" content="Hidden Project — mobile apps and games">
-    <meta property="og:description" content="An independent developer publishing on Google Play and App Store">
-    <meta property="og:url" content="https://hiddenproject.tech/">
-    <meta property="og:image" content="https://hiddenproject.tech/assets/og.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hidden Project — mobile apps and games">
-    <meta name="twitter:description" content="An independent developer publishing on Google Play and App Store">
-    <meta name="twitter:image" content="https://hiddenproject.tech/assets/og.png">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="favicon.ico" sizes="32x32">
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/darkness-hero.jpg" as="image">
-    <link rel="stylesheet" href="styles.css">
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Hidden Project",
-        "url": "https://hiddenproject.tech/",
-        "description": "An independent developer publishing on Google Play and App Store",
-        "publisher": {
-          "@type": "Person",
-          "name": "Danila Rassokhin",
-          "email": "danilarassokhin@gmail.com",
-          "sameAs": ["https://github.com/CrissNamon"]
-        }
-      }
-    </script>
-  </head>
-  <body>
-    <a class="skip" href="#projects">Skip to projects</a>
-    <header class="site-header">
-      <div class="wrap">
-        <a class="brand" href="#top">
-          <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
-            <circle cx="16" cy="16" r="9" fill="none" stroke="currentColor" stroke-width="4"></circle>
-          </svg>
-          <span>Hidden Project</span>
-        </a>
-        <nav class="nav" aria-label="Primary">
-          <a href="#projects">Projects</a>
-          <a href="#studio">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <main id="top">
+---
+layout: default
+og_title: Hidden Project — mobile apps and games
+preload_image: /assets/darkness-hero.jpg
+---
       <section class="hero">
         <div class="wrap">
           <div class="hero-grid">
@@ -76,333 +15,64 @@
               </ul>
             </div>
             <figure class="phone hero-phone">
-              <img src="assets/darkness-hero.jpg" width="1080" height="2400" alt="The Outer Darkness ship scanner: a green radar screen with a sweeping beam and three derelict ships as contacts around your ship at the centre." fetchpriority="high">
+              <img src="/assets/darkness-hero.jpg" width="1080" height="2400" alt="The Outer Darkness ship scanner: a green radar screen with a sweeping beam and three derelict ships as contacts around your ship at the centre." fetchpriority="high">
               <figcaption>The Outer Darkness</figcaption>
             </figure>
           </div>
 
+
           <ol class="codex">
-            <li class="is-current">
-              <a href="#the-outer-darkness">
-                <span class="num">01</span>
+            {%- for game in site.data.games %}
+            <li{% if forloop.first %} class="is-current"{% endif %}>
+              <a href="/{{ game.slug }}/">
+                <span class="num">{{ game.num }}</span>
                 <span>
-                  <span class="name">The Outer Darkness</span>
-                  <em class="kind">Sci-fi roguelike</em>
+                  <span class="name">{{ game.name }}</span>
+                  <em class="kind">{{ game.kind }}</em>
                 </span>
-                <span class="state">Pre-registration</span>
+                <span class="state">{{ game.status }}</span>
               </a>
             </li>
-            <li>
-              <a href="#dance-catharsis">
-                <span class="num">02</span>
-                <span>
-                  <span class="name">Dance CATharsis</span>
-                  <em class="kind">Rhythm and cats</em>
-                </span>
-                <span class="state">Google Play</span>
-              </a>
-            </li>
-            <li>
-              <a href="#the-jar">
-                <span class="num">03</span>
-                <span>
-                  <span class="name">The Jar</span>
-                  <em class="kind">Merge and idle</em>
-                </span>
-                <span class="state">Google Play</span>
-              </a>
-            </li>
-            <li>
-              <a href="#tower">
-                <span class="num">04</span>
-                <span>
-                  <span class="name">The Tower: Endless Climb RPG</span>
-                  <em class="kind">Idle RPG</em>
-                </span>
-                <span class="state">Google Play</span>
-              </a>
-            </li>
+            {%- endfor %}
           </ol>
         </div>
       </section>
 
-      <section id="projects" aria-label="Projects in development">
+      <section class="band" id="projects" aria-labelledby="projects-title">
         <div class="wrap">
-          <article class="project showcase" id="the-outer-darkness">
-            <div class="project-copy">
-              <p class="kicker">01 · Sci-fi roguelike · Game</p>
-              <h2>The Outer Darkness</h2>
-              <p>Dead ships drift back out of the dark with their holds full and their crews still aboard. Pick a derelict on your scanner, board it, and fight your way deck by deck to the escape shuttle. Aim each shot at a body part, take what you can carry, and get out. Die, and everything you brought stays aboard.</p>
-              <ul class="stores">
-                <li><span class="pip" aria-hidden="true"></span> <a href="https://play.google.com/store/apps/details?id=tech.hiddenproject.theouterdarkness">Pre-register on Google Play</a></li>
-              </ul>
-            </div>
-            <div class="gallery">
-              <div class="gallery-bar">
-                <div class="gallery-nav">
-                  <span class="counter" data-counter aria-live="polite">1 / 5</span>
-                  <button class="pixel-btn" type="button" data-prev>Prev</button>
-                  <button class="pixel-btn" type="button" data-next>Next</button>
-                </div>
+          <p class="eyebrow">Projects</p>
+          <h2 id="projects-title">Games</h2>
+          <div class="game-grid">
+            {%- for game in site.data.games %}
+            {%- assign primary = game.stores | first %}
+            <article class="game-tile" id="{{ game.anchor | default: game.slug }}" style="--ember: {{ game.accent }};">
+              <a class="game-tile-art" href="/{{ game.slug }}/" tabindex="-1" aria-hidden="true">
+                <img src="{{ game.feature }}" width="{{ game.feature_width }}" height="{{ game.feature_height }}" alt="" loading="lazy">
+              </a>
+              <div class="game-tile-body">
+                <p class="kicker">{{ game.num }} · {{ game.kind }}</p>
+                <h3><a href="/{{ game.slug }}/">{{ game.name }}</a></h3>
+                <p>{{ game.summary }}</p>
+                <ul class="stores">
+                  <li><span class="pip" aria-hidden="true"></span> <a href="{{ primary.url }}">{{ primary.label }}</a></li>
+                </ul>
               </div>
-              <div class="gallery-scroller" data-scroller tabindex="0" aria-label="The Outer Darkness screenshots">
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="Aim for the weak point">
-                    <img src="assets/darkness-fight.jpg" width="1080" height="1920" alt="A fight in The Outer Darkness: a Stalker with its body parts and hit chances, the fight log in green and red, and the FIRE bar for a rivet shot." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">Aim for the weak point</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="Every ship is a gamble">
-                    <img src="assets/darkness-contact.jpg" width="1080" height="1920" alt="A derelict contact card: the ore hauler MV Tallow drawn in text, an Infested reading and one unknown reading, and a BOARD button." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">Every ship is a gamble</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="Map the decks">
-                    <img src="assets/darkness-map.jpg" width="1080" height="1920" alt="The ship map: rooms in layers from the docking airlock to the escape shuttle, the way taken lit green, unknown rooms marked with question marks." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">Map the decks</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="Answer the voice, or leave">
-                    <img src="assets/darkness-event.jpg" width="1080" height="1920" alt="An event in the comms room, drawn in text, with the words LET US IN on the screens and a choice to answer." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">Answer the voice, or leave</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="Die, and it all stays aboard">
-                    <img src="assets/darkness-death.jpg" width="1080" height="1920" alt="The death screen: the escape shuttle drawn in red, SIGNAL LOST, and the cargo lost with you." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">Die, and it all stays aboard</figcaption>
-                </figure>
-              </div>
-            </div>
-
-            <dl class="facts">
-              <div>
-                <dt>Scanner</dt>
-                <dd>Derelicts in range on a green radar, each with its size, threat and conditions.</dd>
-              </div>
-              <div>
-                <dt>Boarding</dt>
-                <dd>A new seeded ship every run: fights, loot, supplies and event rooms.</dd>
-              </div>
-              <div>
-                <dt>Aimed combat</dt>
-                <dd>Turn-based rounds with action points. Shoot a part to cripple it.</dd>
-              </div>
-              <div>
-                <dt>Extraction</dt>
-                <dd>Reach the shuttle with your cargo, or lose it and the gear you took.</dd>
-              </div>
-              <div>
-                <dt>Your ship</dt>
-                <dd>Sell salvage, buy gear and upgrade the scanner, cargo hold, jump drive and vault.</dd>
-              </div>
-            </dl>
-          </article>
-          <article class="project showcase" id="dance-catharsis">
-            <div class="project-copy">
-              <p class="kicker">02 · Rhythm and cats · Game</p>
-              <h2>Dance CATharsis</h2>
-              <p>A cat band plays gigs for a cozy pixel village. Each cat is one instrument and one lane: tap the paw notes in time, and a missed note mutes that cat until you hit again, so you hear every mistake. Strays wander in to the edge of town, and a dance-off decides if they join.</p>
-              <ul class="stores">
-                <li><span class="pip" aria-hidden="true"></span> <a href="https://play.google.com/store/apps/details?id=tech.hiddenproject.dancecatharsis">Google Play</a></li>
-              </ul>
-            </div>
-            <div class="gallery">
-              <div class="gallery-bar">
-                <div class="gallery-nav">
-                  <span class="counter" data-counter aria-live="polite">1 / 4</span>
-                  <button class="pixel-btn" type="button" data-prev>Prev</button>
-                  <button class="pixel-btn" type="button" data-next>Next</button>
-                </div>
-              </div>
-              <div class="gallery-scroller" data-scroller tabindex="0" aria-label="Dance CATharsis screenshots">
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="A gig at the drop, with Catharsis on">
-                    <img src="assets/dance-gig.jpg" width="1080" height="1920" alt="Screenshot of a Dance CATharsis gig. Four cats play drums, bass, keys and lead in four lanes, paw notes fall toward the rings, and Catharsis doubles the score." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">A gig at the drop</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="The village, where the band rests and busks">
-                    <img src="assets/dance-village.jpg" width="1080" height="1920" alt="Screenshot of the Dance CATharsis village at night: houses with string lights, a stage deck with the band, cats resting on the grass and a DJ cat in the corner." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">The village</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="A dance-off with a stray">
-                    <img src="assets/dance-danceoff.jpg" width="1080" height="1920" alt="Screenshot of a Dance CATharsis dance-off: a stray cat dances to its own loop while the player taps along to win it over." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">A dance-off with a stray</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="Every cat has its own dance">
-                    <img src="assets/dance-card.jpg" width="1080" height="1920" alt="Screenshot of a Dance CATharsis cat card: one cat dancing in the spotlight, with its instrument, genre, personality and level." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">Every cat has its own dance</figcaption>
-                </figure>
-              </div>
-            </div>
-
-            <dl class="facts">
-              <div>
-                <dt>Rhythm</dt>
-                <dd>Four lanes, one per cat. A miss mutes that cat's part.</dd>
-              </div>
-              <div>
-                <dt>Band</dt>
-                <dd>Every cat brings its own groove, so a new cat means a new song part.</dd>
-              </div>
-              <div>
-                <dt>Strays</dt>
-                <dd>Win a dance-off and a stray joins the band.</dd>
-              </div>
-              <div>
-                <dt>Village</dt>
-                <dd>Resting cats busk for tips. Requests and upgrades grow the village.</dd>
-              </div>
-              <div>
-                <dt>Clips</dt>
-                <dd>Record a vertical clip of a gig or a cat's dance and share it.</dd>
-              </div>
-            </dl>
-          </article>
-          <article class="project showcase" id="the-jar">
-            <div class="project-copy">
-              <p class="kicker">03 · Merge and idle · Game</p>
-              <h2>Jarlife: Merge Terrarium</h2>
-              <p>Fungus, seeds, and eggs go into a jar and merge until something new evolves. The jar keeps time: seasons change, and the day gives way to night. A codex records what you have grown. Modifiers bend the rules of a run.</p>
-              <ul class="stores">
-                <li><span class="pip" aria-hidden="true"></span> <a href="https://play.google.com/store/apps/details?id=tech.hiddenproject.jarlife">Google Play</a></li>
-              </ul>
-            </div>
-            <div class="gallery">
-              <div class="gallery-bar">
-                <div class="gallery-nav">
-                  <span class="counter" data-counter aria-live="polite">1 / 4</span>
-                  <button class="pixel-btn" type="button" data-prev>Prev</button>
-                  <button class="pixel-btn" type="button" data-next>Next</button>
-                </div>
-              </div>
-              <div class="gallery-scroller" data-scroller tabindex="0" aria-label="The Jar screenshots">
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="Seeds, eggs, and fungus in the jar">
-                    <img src="assets/jar-board.webp" width="1080" height="2400" alt="Development screenshot of the jar. A grid of merged creatures during a bloom season, with seeds, eggs, and fungus ready to place." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">Seeds, eggs, and fungus</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="Upgrades for the jar and what it grows">
-                    <img src="assets/jar-upgrades.webp" width="1080" height="2400" alt="Development screenshot of jar upgrades: faster spawning, a bigger pouch, better seeds, a wider jar, a longer nap, and unstable DNA." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">Upgrades for the jar</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="A codex of what has grown">
-                    <img src="assets/jar-codex.webp" width="1080" height="2400" alt="Development screenshot of the jar codex. Discovered flora across tiers, and a catalyst that makes the next merge mutate." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">A codex of what has grown</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="Seasons, and the seeds they leave">
-                    <img src="assets/jar-seasons.webp" width="1080" height="2400" alt="Development screenshot of jar seasons. Bloom is active, ending the season pays seeds, and seed skills sit underneath." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">Seasons, and the seeds they leave</figcaption>
-                </figure>
-              </div>
-            </div>
-            
-            <dl class="facts">
-              <div>
-                <dt>Merge</dt>
-                <dd>Fungus, seeds, and eggs combine inside the jar.</dd>
-              </div>
-              <div>
-                <dt>Evolution</dt>
-                <dd>Merges turn into new forms.</dd>
-              </div>
-              <div>
-                <dt>Time</dt>
-                <dd>Seasons, and a day and night cycle.</dd>
-              </div>
-              <div>
-                <dt>Codex</dt>
-                <dd>What has appeared, written down.</dd>
-              </div>
-              <div>
-                <dt>Modifiers</dt>
-                <dd>Rules that change from run to run.</dd>
-              </div>
-            </dl>
-          </article>
-          <article class="project showcase" id="tower">
-            <div class="tower-intro project-copy">
-              <p class="kicker">04 · Idle RPG · Game</p>
-              <h2>The Tower: Endless Climb RPG</h2>
-              <p>How far can you climb?</p>
-              <ul class="stores">
-                <li><span class="pip" aria-hidden="true"></span> <a href="https://play.google.com/store/apps/details?id=tech.hiddenproject.thetower">Google Play</a></li>
-              </ul>
-              <blockquote class="pull">
-                <p>It was already standing when you came through the door.</p>
-                <footer>Floor 78, Voidspire</footer>
-              </blockquote>
-              <p>Go through enemies, gate bosses and weekly raids. Each floor is fight. And each fight opens a new doors. Your fall is your end</p>
-            </div>
-
-            <div class="gallery">
-              <div class="gallery-bar">
-                <div class="gallery-nav">
-                  <span class="counter" data-counter aria-live="polite">1 / 4</span>
-                  <button class="pixel-btn" type="button" data-prev>Prev</button>
-                  <button class="pixel-btn" type="button" data-next>Next</button>
-                </div>
-              </div>
-              <div class="gallery-scroller" data-scroller tabindex="0" aria-label="The Tower screenshots">
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="Gold waits to be claimed">
-                    <img src="assets/tower-floor.webp" width="1080" height="2400" alt="Development screenshot of The Tower on floor 78, Voidspire. Gold is waiting to be claimed, materials are gathering, and a skill is sealed every three turns." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">Gold waits to be claimed</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="Floor 78. Something is already there.">
-                    <img src="assets/tower-combat.webp" width="1080" height="2400" alt="Development screenshot of a turn-based fight in The Tower. Floor 78, a Rotting Tenant, with Strike, Heavy Blow, Ultimate, and Interrupt." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">Something is already there</figcaption>
-                </figure>
-                <figure class="shot">
-                  <button type="button" data-shot data-caption="Marks buy the next rank">
-                    <img src="assets/tower-descend.webp" width="1080" height="2400" alt="Development screenshot of The Tower descend screen. Fourteen marks, and ranks for Edge, Vigour, and Hoard that can be bought." loading="lazy">
-                  </button>
-                  <figcaption aria-hidden="true">Marks buy the next rank</figcaption>
-                </figure>
-              </div>
-            </div>
-            <dl class="facts">
-              <div>
-                <dt>Combat</dt>
-                <dd>Turn-based. Choose your character, learn new skills and upgrade equipment</dd>
-              </div>
-              <div>
-                <dt>Idle</dt>
-                <dd>Gold waits until you claim it. Materials arrive on their own.</dd>
-              </div>
-              <div>
-                <dt>Choose your path</dt>
-                <dd>Choose one of 3 doors after fight. Each one has its own effect</dd>
-              </div>
-              <div>
-                <dt>Ascending</dt>
-                <dd>Start your journey from the first floor again an gain marks for new upgrades</dd>
-              </div>
-            </dl>
-          </article>
+            </article>
+            {%- endfor %}
+          </div>
         </div>
       </section>
+
+      {%- if site.posts.size > 0 %}
+      <section class="band" aria-labelledby="blog-title">
+        <div class="wrap">
+          <p class="eyebrow">Blog</p>
+          <h2 id="blog-title">Latest notes</h2>
+          {% include post-list.html posts=site.posts limit=3 %}
+          <p><a class="pixel-btn" href="/blog/">All posts</a></p>
+        </div>
+      </section>
+      {%- endif %}
 
       <section class="studio" id="studio">
         <div class="wrap studio-grid">
@@ -434,26 +104,29 @@
               <dt>Email</dt>
               <dd><a href="mailto:support@hiddenproject.tech">support@hiddenproject.tech</a></dd>
             </div>
+            <div>
+              <dt>Follow</dt>
+              <dd class="social">
+                {%- for link in site.social %}
+                <a href="{{ link.url }}" rel="me noopener">{{ link.name }}</a>
+                {%- endfor %}
+              </dd>
+            </div>
           </dl>
         </div>
       </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="wrap footer-row">
-        <p>© 2026 Hidden Project | Danila Rassokhin</p>
-        <p><a href="privacy.html">Privacy</a></p>
-        <p>hiddenproject.tech</p>
-      </div>
-    </footer>
-
-    <dialog id="lightbox" aria-label="Enlarged screenshot">
-      <div class="lightbox-frame">
-        <button class="pixel-btn lightbox-close" type="button" data-close>Close</button>
-        <img alt="">
-        <p></p>
-      </div>
-    </dialog>
-    <script src="main.js"></script>
-  </body>
-</html>
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Hidden Project",
+          "url": "https://hiddenproject.tech/",
+          "description": "An independent developer publishing on Google Play and App Store",
+          "publisher": {
+            "@type": "Person",
+            "name": "Danila Rassokhin",
+            "email": "danilarassokhin@gmail.com",
+            "sameAs": ["https://github.com/CrissNamon"{% for link in site.social %}, {{ link.url | jsonify }}{% endfor %}]
+          }
+        }
+      </script>

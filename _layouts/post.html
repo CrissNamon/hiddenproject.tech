@@ -1,0 +1,57 @@
+---
+layout: default
+---
+{%- assign game = site.data.games | where: "slug", page.game | first -%}
+      <article class="page post">
+        <div class="wrap page-narrow">
+          <p class="eyebrow"><a href="/blog/">Blog</a> / <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%-d %B %Y" }}</time></p>
+          <h1>{{ page.title }}</h1>
+          {%- if page.description %}
+          <p class="lede">{{ page.description }}</p>
+          {%- endif %}
+          <div class="prose">
+{{ content }}
+          </div>
+
+          {%- if game %}
+          <aside class="game-card" aria-label="{{ game.short_name | default: game.name }}">
+            <a class="game-card-link" href="/{{ game.slug }}/">
+              <img src="{{ game.feature }}" width="{{ game.feature_width }}" height="{{ game.feature_height }}" alt="" loading="lazy">
+              <span class="kicker">{{ game.num }} · {{ game.kind }} · {{ game.status }}</span>
+              <span class="game-card-name">{{ game.name }}</span>
+              <span class="game-card-text">{{ game.summary }}</span>
+            </a>
+            <div class="actions">
+              {%- for store in game.stores %}
+              <a class="pixel-btn{% if forloop.first %} fill{% endif %}" href="{{ store.url }}">{{ store.label }}</a>
+              {%- endfor %}
+            </div>
+          </aside>
+          {%- endif %}
+
+          <nav class="post-nav" aria-label="More posts">
+            {%- if page.previous %}
+            <a href="{{ page.previous.url }}"><span class="pixel">Older</span> {{ page.previous.title }}</a>
+            {%- endif %}
+            {%- if page.next %}
+            <a class="next" href="{{ page.next.url }}"><span class="pixel">Newer</span> {{ page.next.title }}</a>
+            {%- endif %}
+          </nav>
+          <p><a class="pixel-btn" href="/blog/">All posts</a></p>
+        </div>
+      </article>
+
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": {{ page.title | jsonify }},
+          "description": {{ page.description | default: page.excerpt | strip_html | strip_newlines | jsonify }},
+          "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+          "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
+          "url": {{ page.url | absolute_url | jsonify }},
+          "image": {{ page.image | default: game.feature | default: "/assets/og.png" | absolute_url | jsonify }},
+          "author": { "@type": "Person", "name": {{ site.author | jsonify }} },
+          "publisher": { "@type": "Organization", "name": {{ site.title | jsonify }}, "url": {{ "/" | absolute_url | jsonify }} }
+        }
+      </script>

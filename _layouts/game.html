@@ -1,0 +1,131 @@
+---
+layout: default
+---
+{%- assign game = site.data.games | where: "slug", page.game | first -%}
+{%- assign game_posts = site.posts | where: "game", game.slug -%}
+      <section class="game-hero">
+        <div class="wrap game-hero-grid">
+          <div>
+            <p class="eyebrow"><a href="/#projects">Projects</a> / {{ game.num }} · {{ game.kind }}</p>
+            <div class="game-title">
+              {%- if game.icon %}
+              <img class="game-icon{% if game.icon_pixel %} px{% endif %}" src="{{ game.icon }}" width="72" height="72" alt="">
+              {%- endif %}
+              <h1>{{ game.name }}</h1>
+            </div>
+            <p class="lede">{{ game.tagline }}</p>
+            <div class="actions">
+              {%- for store in game.stores %}
+              <a class="pixel-btn{% if forloop.first %} fill{% endif %}" href="{{ store.url }}">{{ store.label }}</a>
+              {%- endfor %}
+            </div>
+          </div>
+          <figure class="poster game-banner">
+            <img src="{{ game.feature }}" width="{{ game.feature_width }}" height="{{ game.feature_height }}" alt="{{ game.feature_alt }}" fetchpriority="high">
+          </figure>
+        </div>
+      </section>
+
+      <div class="wrap">
+        <article class="project showcase" aria-label="About {{ game.short_name | default: game.name }}">
+          <div class="project-copy">
+            <p class="kicker">About the game</p>
+            {%- for paragraph in game.about %}
+            <p>{{ paragraph }}</p>
+            {%- endfor %}
+            {%- if game.quote %}
+            <blockquote class="pull">
+              <p>{{ game.quote.text }}</p>
+              <footer>{{ game.quote.cite }}</footer>
+            </blockquote>
+            {%- endif %}
+          </div>
+
+          <div class="gallery">
+            <div class="gallery-bar">
+              <div class="gallery-nav">
+                <span class="counter" data-counter aria-live="polite">1 / {{ game.shots | size }}</span>
+                <button class="pixel-btn" type="button" data-prev>Prev</button>
+                <button class="pixel-btn" type="button" data-next>Next</button>
+              </div>
+            </div>
+            <div class="gallery-scroller" data-scroller tabindex="0" aria-label="{{ game.short_name | default: game.name }} screenshots">
+              {%- for shot in game.shots %}
+              <figure class="shot">
+                <button type="button" data-shot data-caption="{{ shot.caption | escape }}">
+                  <img src="{{ shot.src }}" width="{{ shot.width }}" height="{{ shot.height }}" alt="{{ shot.alt | escape }}"{% unless forloop.first %} loading="lazy"{% endunless %}>
+                </button>
+                <figcaption aria-hidden="true">{{ shot.caption }}</figcaption>
+              </figure>
+              {%- endfor %}
+            </div>
+          </div>
+
+          <dl class="facts">
+            {%- for fact in game.facts %}
+            <div>
+              <dt>{{ fact.term }}</dt>
+              <dd>{{ fact.desc }}</dd>
+            </div>
+            {%- endfor %}
+          </dl>
+        </article>
+      </div>
+
+      {%- if game_posts.size > 0 %}
+      <section class="band">
+        <div class="wrap">
+          <p class="eyebrow">From the blog</p>
+          <h2>{{ game.short_name | default: game.name }} notes</h2>
+          {% include post-list.html posts=game_posts limit=3 %}
+        </div>
+      </section>
+      {%- endif %}
+
+      <section class="band">
+        <div class="wrap">
+          <p class="eyebrow">More from {{ site.title }}</p>
+          <ol class="codex">
+            {%- for other in site.data.games %}
+            {%- if other.slug != game.slug %}
+            <li>
+              <a href="/{{ other.slug }}/">
+                <span class="num">{{ other.num }}</span>
+                <span>
+                  <span class="name">{{ other.name }}</span>
+                  <em class="kind">{{ other.kind }}</em>
+                </span>
+                <span class="state">{{ other.status }}</span>
+              </a>
+            </li>
+            {%- endif %}
+            {%- endfor %}
+          </ol>
+          <p class="game-links"><a href="{{ game.privacy }}">{{ game.short_name | default: game.name }} privacy policy</a></p>
+        </div>
+      </section>
+
+      <dialog id="lightbox" aria-label="Enlarged screenshot">
+        <div class="lightbox-frame">
+          <button class="pixel-btn lightbox-close" type="button" data-close>Close</button>
+          <img alt="">
+          <p></p>
+        </div>
+      </dialog>
+
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoGame",
+          "name": {{ game.name | jsonify }},
+          "description": {{ game.summary | jsonify }},
+          "url": {{ page.url | absolute_url | jsonify }},
+          "image": {{ game.feature | absolute_url | jsonify }},
+          "genre": {{ game.kind | jsonify }},
+          "gamePlatform": [{% for store in game.stores %}{% if store.name == "App Store" %}"iOS"{% else %}"Android"{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+          "operatingSystem": "{% for store in game.stores %}{% if store.name == "App Store" %}iOS{% else %}Android{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}",
+          "applicationCategory": "GameApplication",
+          "author": { "@type": "Person", "name": {{ site.author | jsonify }} },
+          "publisher": { "@type": "Organization", "name": {{ site.title | jsonify }}, "url": {{ "/" | absolute_url | jsonify }} }
+        }
+      </script>

@@ -1,0 +1,42 @@
+# Built by GitHub Pages (Jekyll 3). Pages without front matter, such as the ad
+# landings and privacy policies, are copied as they are.
+title: Hidden Project
+description: An independent developer publishing on Google Play and App Store
+url: https://hiddenproject.tech
+baseurl: ""
+author: Danila Rassokhin
+email: support@hiddenproject.tech
+timezone: Asia/Yerevan
+lang: en
+
+# Shown in the footer and the About section, and listed as sameAs for search engines.
+social:
+  - name: Instagram
+    url: https://www.instagram.com/tech.hiddenproject/
+  - name: X
+    url: https://x.com/hiddenprjtech
+  - name: TikTok
+    url: https://www.tiktok.com/@hiddenproject.tech
+  - name: Google Play
+    url: https://play.google.com/store/apps/dev?id=7391390601934110448
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Posts live in _posts/ as YYYY-MM-DD-title.md and are served at /blog/title/.
+permalink: /blog/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

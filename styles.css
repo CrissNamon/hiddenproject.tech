@@ -66,7 +66,7 @@ body {
   background-color: var(--bg);
   background-image:
     url("assets/noise.png"),
-    radial-gradient(880px 460px at 92% -40px, rgba(216, 146, 74, 0.16), transparent 58%);
+    radial-gradient(880px 460px at 92% -40px, color-mix(in srgb, var(--ember) 16%, transparent), transparent 58%);
   background-repeat: repeat, no-repeat;
   color: var(--body);
   font-family: var(--sans);
@@ -179,7 +179,8 @@ a {
   font-size: 0.98rem;
 }
 
-.nav a:hover {
+.nav a:hover,
+.nav a[aria-current] {
   color: var(--text);
 }
 
@@ -207,6 +208,7 @@ a {
 
 h1,
 h2,
+h3,
 .codex .name {
   font-family: var(--serif);
   font-weight: 560;
@@ -253,7 +255,7 @@ h1 {
   height: 0.7rem;
   border-radius: 50%;
   background: var(--ember);
-  box-shadow: 0 0 0 4px rgba(216, 146, 74, 0.15);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ember) 15%, transparent);
 }
 
 .pip-empty {
@@ -506,7 +508,7 @@ h1 {
   justify-content: center;
   min-height: 44px;
   padding: 0.45rem 1rem;
-  border: 1px solid rgba(216, 146, 74, 0.55);
+  border: 1px solid color-mix(in srgb, var(--ember) 55%, transparent);
   background: transparent;
   color: var(--ember);
   font-family: var(--pixel);
@@ -516,7 +518,7 @@ h1 {
 }
 
 .pixel-btn:hover {
-  background: rgba(216, 146, 74, 0.12);
+  background: color-mix(in srgb, var(--ember) 12%, transparent);
 }
 
 .pixel-btn:disabled {
@@ -538,7 +540,7 @@ h1 {
 }
 
 .pixel-btn.fill:hover {
-  background: #e3a45f;
+  background: color-mix(in srgb, var(--ember) 82%, #fff);
 }
 
 .gallery-scroller {
@@ -569,7 +571,7 @@ h1 {
 }
 
 .shot button:hover {
-  border-color: rgba(216, 146, 74, 0.55);
+  border-color: color-mix(in srgb, var(--ember) 55%, transparent);
 }
 
 .shot img {
@@ -759,8 +761,400 @@ h1 {
   color: var(--muted);
 }
 
+.eyebrow a,
+.post-meta a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.eyebrow a:hover,
+.post-meta a:hover {
+  color: var(--text);
+}
+
+.footer-links a + a {
+  margin-left: 1rem;
+}
+
+.sheet .social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+}
+
+.px {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Sections after the hero on the main page, the game pages and the blog. */
+
+.band {
+  padding: clamp(2.6rem, 6vw, 4.75rem) 0;
+  border-top: 1px solid var(--line);
+}
+
+.band h2 {
+  margin: 0.45rem 0 0;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 0.95;
+}
+
+.band .codex {
+  margin-top: 1.5rem;
+}
+
+.band > .wrap > p:last-child {
+  margin-bottom: 0;
+}
+
+/* Game cards on the main page. */
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.game-tile {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  scroll-margin-top: calc(var(--header) + 0.75rem);
+}
+
+.game-tile:hover,
+.game-tile:focus-within {
+  border-color: color-mix(in srgb, var(--ember) 55%, transparent);
+}
+
+.game-tile-art img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1024 / 500;
+  object-fit: cover;
+  background: #000;
+}
+
+.game-tile-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.15rem 1.25rem 1.3rem;
+}
+
+.game-tile h3 {
+  margin: 0.4rem 0 0.5rem;
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  line-height: 1.02;
+}
+
+.game-tile h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.game-tile h3 a:hover {
+  color: var(--ember);
+}
+
+.game-tile-body > p:not(.kicker) {
+  margin: 0;
+}
+
+.game-tile .stores {
+  margin-top: auto;
+  padding-top: 1.1rem;
+}
+
+.stores a {
+  color: var(--text);
+  text-decoration-color: color-mix(in srgb, var(--ember) 70%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.stores a:hover {
+  color: var(--ember);
+}
+
+/* A game's own page. */
+
+.game-hero {
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(2rem, 5vw, 3.5rem);
+}
+
+.game-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.game-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.8rem 0 0.9rem;
+}
+
+.game-title h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 6.5vw, 4.6rem);
+  line-height: 0.92;
+}
+
+.game-icon {
+  flex: none;
+  width: clamp(56px, 8vw, 72px);
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.game-hero .actions {
+  margin-top: 1.5rem;
+}
+
+.game-banner img {
+  aspect-ratio: 1024 / 500;
+  object-fit: cover;
+  background: #000;
+}
+
+.game-links {
+  margin: 1.5rem 0 0;
+  font-size: 0.95rem;
+}
+
+.game-links a {
+  color: var(--muted);
+}
+
+.game-links a:hover {
+  color: var(--text);
+}
+
+/* The blog. */
+
+.post-list {
+  list-style: none;
+  margin: 1.5rem 0 1.75rem;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.post-list li {
+  padding: 1.25rem 0 1.35rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.post-list h3 {
+  margin: 0.35rem 0 0.4rem;
+  font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+  line-height: 1.1;
+}
+
+.post-list h3 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.post-list h3 a:hover {
+  color: var(--ember);
+}
+
+.post-list p {
+  margin: 0;
+  max-width: 40rem;
+}
+
+.post-meta {
+  font-family: var(--pixel);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.page .post-list p.post-meta {
+  font-size: 0.72rem;
+}
+
+.post .lede {
+  color: var(--muted);
+}
+
+.prose {
+  margin-top: 2rem;
+}
+
+.prose h2 {
+  margin: 2.4rem 0 0.6rem;
+  font-size: clamp(1.75rem, 3.5vw, 2.3rem);
+  line-height: 1.05;
+}
+
+.prose h3 {
+  margin: 1.9rem 0 0.4rem;
+  font-size: 1.4rem;
+  line-height: 1.15;
+}
+
+.prose strong {
+  color: var(--text);
+  font-weight: 620;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.25rem;
+}
+
+.prose li + li {
+  margin-top: 0.45rem;
+}
+
+.prose li::marker {
+  color: var(--ember);
+}
+
+.prose blockquote {
+  margin: 1.6rem 0;
+  padding: 0.15rem 0 0.15rem 1rem;
+  border-left: 2px solid var(--ember);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+.prose img {
+  display: block;
+  margin: 1.75rem auto;
+  border-radius: 1rem;
+}
+
+.prose hr {
+  margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.prose code {
+  padding: 0.1em 0.35em;
+  border-radius: 0.35rem;
+  background: var(--card);
+  font-size: 0.92em;
+}
+
+.prose pre {
+  overflow-x: auto;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: var(--card);
+}
+
+.prose pre code {
+  padding: 0;
+  background: none;
+}
+
+.game-card {
+  margin: 2.75rem 0 0;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+}
+
+.game-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.page .game-card-link {
+  color: inherit;
+}
+
+.game-card-link img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1024 / 500;
+  object-fit: cover;
+  background: #000;
+}
+
+.game-card .kicker {
+  display: block;
+  padding: 1.1rem 1.25rem 0;
+}
+
+.game-card-name {
+  display: block;
+  padding: 0.35rem 1.25rem 0.4rem;
+  font-family: var(--serif);
+  font-weight: 560;
+  font-size: 1.75rem;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.game-card-link:hover .game-card-name {
+  color: var(--ember);
+}
+
+.game-card-text {
+  display: block;
+  padding: 0 1.25rem;
+}
+
+.game-card .actions {
+  margin: 0;
+  padding: 1.1rem 1.25rem 1.25rem;
+}
+
+.page .game-card .pixel-btn.fill {
+  color: var(--ember-ink);
+}
+
+.post-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2.5rem 0 1.5rem;
+}
+
+.post-nav a {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.post-nav a:hover {
+  color: var(--ember);
+}
+
+.post-nav .next {
+  grid-column: 2;
+  text-align: right;
+}
+
+.post-nav .pixel {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
 @media (max-width: 860px) {
   .hero-grid,
+  .game-hero-grid,
   .project-split,
   .studio-grid,
   .showcase {
@@ -804,6 +1198,16 @@ h1 {
 
   .codex .state {
     display: none;
+  }
+
+  .game-grid,
+  .post-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .post-nav .next {
+    grid-column: auto;
+    text-align: left;
   }
 
   .facts div,

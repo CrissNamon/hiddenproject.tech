@@ -1,0 +1,17 @@
+---
+layout: default
+title: Blog
+description: Notes from Hidden Project. Releases, updates, and how the games are made.
+---
+      <section class="page">
+        <div class="wrap page-narrow">
+          <p class="eyebrow">Blog</p>
+          <h1>Notes from the workbench</h1>
+          <p class="lede">Releases, updates, and how the games are made. New posts also arrive by <a href="/blog/feed.xml">RSS</a>.</p>
+          {%- if site.posts.size > 0 %}
+          {% include post-list.html posts=site.posts %}
+          {%- else %}
+          <p>No posts yet.</p>
+          {%- endif %}
+        </div>
+      </section>

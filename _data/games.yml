@@ -1,0 +1,250 @@
+# The games, in the order they appear on the main page. Each game page
+# (/<slug>/index.html) is drawn from its entry here by _layouts/game.html.
+#
+#   anchor    the id of its card on the main page, when it isn't the slug
+#   accent    the game's own colour, used for buttons and labels on its page
+#   stores    the first one is the main button
+#   shots     screenshots for the gallery; caption is shown, alt is for screen readers
+
+- slug: the-outer-darkness
+  num: "01"
+  name: The Outer Darkness
+  kind: Sci-fi roguelike
+  status: Pre-registration
+  accent: "#3cff7a"
+  tagline: Board fast. Take what you can. Get out before it notices you.
+  summary: Board dead ships, aim for weak spots and escape with the loot. A turn-based sci-fi roguelike extraction crawler.
+  icon: /the-outer-darkness/icon.png
+  feature: /the-outer-darkness/feature-graphic.png
+  feature_width: 1024
+  feature_height: 500
+  feature_alt: The Outer Darkness feature graphic.
+  privacy: /the-outer-darkness/privacy-policy/
+  stores:
+    - name: Google Play
+      label: Pre-register on Google Play
+      url: https://play.google.com/store/apps/details?id=tech.hiddenproject.theouterdarkness
+    - name: App Store
+      label: Download on the App Store
+      url: https://apps.apple.com/us/app/the-outer-darkness-sci-fi-rpg/id6824474398
+  about:
+    - Dead ships drift back out of the dark with their holds full and their crews still aboard. Pick a derelict on your scanner, board it, and fight your way deck by deck to the escape shuttle. Aim each shot at a body part, take what you can carry, and get out. Die, and everything you brought stays aboard.
+    - Move through a dead ship room by room. You keep only what you carry out, and every step deeper raises the stakes. Low oxygen, darkness and infestations change the rules from one ship to the next.
+    - Built for your phone. One-handed portrait play, 5–15 minutes a boarding, and runs that save when you stop. No pay-to-win.
+  shots:
+    - src: /the-outer-darkness/shot-01.jpg
+      width: 540
+      height: 960
+      caption: Aim for the weak point
+      alt: A fight with a Stalker, with a hit chance for each body part.
+    - src: /the-outer-darkness/shot-03.jpg
+      width: 540
+      height: 960
+      caption: Scan the dark, board the derelict
+      alt: The ship scanner with derelicts around you.
+    - src: /the-outer-darkness/shot-02.jpg
+      width: 540
+      height: 960
+      caption: Mod your weapons
+      alt: A weapon with its mod slots.
+    - src: /the-outer-darkness/shot-05.jpg
+      width: 540
+      height: 960
+      caption: Answer the voice, or leave quickly
+      alt: An event aboard a derelict.
+    - src: /the-outer-darkness/shot-04.jpg
+      width: 540
+      height: 960
+      caption: Crack open a crate
+      alt: A rare find in the Salvage Lottery.
+    - src: /the-outer-darkness/shot-06.jpg
+      width: 540
+      height: 960
+      caption: What silenced the colonies?
+      alt: A recovered tape.
+    - src: /the-outer-darkness/shot-07.jpg
+      width: 540
+      height: 960
+      caption: Die, and it all stays aboard
+      alt: A lost run.
+    - src: /the-outer-darkness/shot-08.jpg
+      width: 540
+      height: 960
+      caption: Sell, upgrade, go back out
+      alt: Ship upgrades.
+  facts:
+    - term: Scanner
+      desc: Derelicts in range on a green radar, each with its size, threat and conditions.
+    - term: Boarding
+      desc: "A new seeded ship every run: fights, loot, supplies and event rooms."
+    - term: Aimed combat
+      desc: Turn-based rounds with action points. Blind a Stalker, cripple a Crawler's legs, crack a Warden's shell.
+    - term: Extraction
+      desc: Reach the shuttle with your cargo, or lose it and the gear you took.
+    - term: Your ship
+      desc: Sell salvage, buy gear and upgrade the scanner, cargo hold, jump drive and vault.
+
+- slug: dance-catharsis
+  num: "02"
+  name: Dance CATharsis
+  kind: Rhythm and cats
+  status: Google Play
+  accent: "#ff4fb8"
+  tagline: A cat band, a cozy pixel village, and every note you miss.
+  summary: A rhythm game about a cat band. Each cat is one instrument and one lane, and a missed note mutes that cat until you hit again.
+  feature: /dance-catharsis/featureGraphic.png
+  feature_width: 1024
+  feature_height: 500
+  feature_alt: Dance CATharsis feature graphic.
+  privacy: /dance-catharsis/privacy-policy/
+  stores:
+    - name: Google Play
+      label: Get it on Google Play
+      url: https://play.google.com/store/apps/details?id=tech.hiddenproject.dancecatharsis
+  about:
+    - A cat band plays gigs for a cozy pixel village. Each cat is one instrument and one lane. Tap the paw notes in time. A missed note mutes that cat until you hit again, so you hear every mistake.
+    - Strays wander in to the edge of town, and a dance-off decides if they join. Between gigs, the band rests in the village and busks for tips.
+  shots:
+    - src: /assets/dance-gig.jpg
+      width: 1080
+      height: 1920
+      caption: A gig at the drop
+      alt: A Dance CATharsis gig. Four cats play drums, bass, keys and lead in four lanes, paw notes fall toward the rings, and Catharsis doubles the score.
+    - src: /assets/dance-village.jpg
+      width: 1080
+      height: 1920
+      caption: The village
+      alt: "The Dance CATharsis village at night: houses with string lights, a stage deck with the band, cats resting on the grass and a DJ cat in the corner."
+    - src: /assets/dance-danceoff.jpg
+      width: 1080
+      height: 1920
+      caption: A dance-off with a stray
+      alt: "A Dance CATharsis dance-off: a stray cat dances to its own loop while the player taps along to win it over."
+    - src: /assets/dance-card.jpg
+      width: 1080
+      height: 1920
+      caption: Every cat has its own dance
+      alt: "A Dance CATharsis cat card: one cat dancing in the spotlight, with its instrument, genre, personality and level."
+  facts:
+    - term: Rhythm
+      desc: Four lanes, one per cat. A miss mutes that cat's part.
+    - term: Band
+      desc: Every cat brings its own groove, so a new cat means a new song part.
+    - term: Strays
+      desc: Win a dance-off and a stray joins the band.
+    - term: Village
+      desc: Resting cats busk for tips. Requests and upgrades grow the village.
+    - term: Clips
+      desc: Record a vertical clip of a gig or a cat's dance and share it.
+
+- slug: jarlife
+  anchor: the-jar
+  num: "03"
+  name: "Jarlife: Merge Terrarium"
+  short_name: Jarlife
+  kind: Merge and idle
+  status: Google Play
+  accent: "#a7f070"
+  tagline: Merge. Evolve. Collect.
+  summary: Merge tiny creatures, evolve a living pixel jar and collect rare mutations.
+  icon: /jarlife/google-play/icon.png
+  icon_pixel: true
+  feature: /jarlife/feature-16x9.png
+  feature_width: 1920
+  feature_height: 1080
+  feature_alt: Jarlife feature graphic.
+  privacy: /jarlife/privacy-policy/
+  stores:
+    - name: Google Play
+      label: Get it on Google Play
+      url: https://play.google.com/store/apps/details?id=tech.hiddenproject.jarlife
+  about:
+    - Fungus, seeds, and eggs go into a jar and merge until something new evolves. Drag two alike together, and a spore becomes moss, a microbe grows into a tiny dragon.
+    - The jar keeps time. Seasons change, and the day gives way to night. It keeps making Life while you're away, so come back to see what it did without you.
+    - A codex records what you have grown, across Flora, Fauna and Fungi, with golden, glowing, shadow and albino mutations to hunt. Modifiers bend the rules of a run.
+  shots:
+    - src: /assets/jar-board.webp
+      width: 1080
+      height: 2400
+      caption: Seeds, eggs, and fungus
+      alt: The jar. A grid of merged creatures during a bloom season, with seeds, eggs, and fungus ready to place.
+    - src: /assets/jar-upgrades.webp
+      width: 1080
+      height: 2400
+      caption: Upgrades for the jar
+      alt: "Jar upgrades: faster spawning, a bigger pouch, better seeds, a wider jar, a longer nap, and unstable DNA."
+    - src: /assets/jar-codex.webp
+      width: 1080
+      height: 2400
+      caption: A codex of what has grown
+      alt: The jar codex. Discovered flora across tiers, and a catalyst that makes the next merge mutate.
+    - src: /assets/jar-seasons.webp
+      width: 1080
+      height: 2400
+      caption: Seasons, and the seeds they leave
+      alt: Jar seasons. Bloom is active, ending the season pays seeds, and seed skills sit underneath.
+  facts:
+    - term: Merge
+      desc: Fungus, seeds, and eggs combine inside the jar.
+    - term: 120 creatures
+      desc: Flora, Fauna and Fungi, each with rare mutations.
+    - term: Time
+      desc: Seasons, and a day and night cycle. Long Night, Monsoon, Bloom…
+    - term: Codex
+      desc: What has appeared, written down.
+    - term: Modifiers
+      desc: Rules that change from run to run.
+
+- slug: the-tower
+  anchor: tower
+  num: "04"
+  name: "The Tower: Endless Climb RPG"
+  short_name: The Tower
+  kind: Idle RPG
+  status: Google Play
+  accent: "#d8924a"
+  tagline: How far can you climb?
+  summary: An endless tower that climbs while you're away. Turn-based boss fights, pixel art, no account.
+  icon: /the-tower/google-play/icon.png
+  icon_pixel: true
+  feature: /the-tower/google-play/feature-graphic.png
+  feature_width: 1024
+  feature_height: 500
+  feature_alt: The Tower feature graphic.
+  privacy: /the-tower/privacy-policy/
+  quote:
+    text: It was already standing when you came through the door.
+    cite: Floor 78, Voidspire
+  stores:
+    - name: Google Play
+      label: Get it on Google Play
+      url: https://play.google.com/store/apps/details?id=tech.hiddenproject.thetower
+  about:
+    - Go through enemies, gate bosses and weekly raids. Each floor is a fight, and each fight opens new doors. Your fall is your end.
+    - Every floor up is a choice, from the Ashlands to the Obsidian Gate. The safe door pays less.
+    - No account, no internet needed. No premium currency, no energy timers, no way to pay past a fight.
+  shots:
+    - src: /assets/tower-floor.webp
+      width: 1080
+      height: 2400
+      caption: Gold waits to be claimed
+      alt: The Tower on floor 78, Voidspire. Gold is waiting to be claimed, materials are gathering, and a skill is sealed every three turns.
+    - src: /assets/tower-combat.webp
+      width: 1080
+      height: 2400
+      caption: Something is already there
+      alt: A turn-based fight in The Tower. Floor 78, a Rotting Tenant, with Strike, Heavy Blow, Ultimate, and Interrupt.
+    - src: /assets/tower-descend.webp
+      width: 1080
+      height: 2400
+      caption: Marks buy the next rank
+      alt: The Tower descend screen. Fourteen marks, and ranks for Edge, Vigour, and Hoard that can be bought.
+  facts:
+    - term: Combat
+      desc: Turn-based. Spend energy, watch your cooldowns, and interrupt the big hit before it lands.
+    - term: Idle
+      desc: Gold waits until you claim it. Materials arrive on their own.
+    - term: Choose your path
+      desc: Choose one of three doors after each fight. Each one has its own effect.
+    - term: Ascending
+      desc: Start your journey from the first floor again and gain marks for new upgrades.

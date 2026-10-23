@@ -1,0 +1,19 @@
+{%- comment -%}
+  A list of posts. Pass posts=… and, optionally, limit=… to cut it short.
+{%- endcomment -%}
+{%- assign list_limit = include.limit | default: include.posts.size -%}
+<ol class="post-list">
+  {%- for post in include.posts limit: list_limit %}
+  {%- assign post_game = site.data.games | where: "slug", post.game | first %}
+  <li>
+    <article>
+      <p class="post-meta">
+        <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B %Y" }}</time>
+        {%- if post_game %} · <a href="/{{ post_game.slug }}/">{{ post_game.short_name | default: post_game.name }}</a>{% endif %}
+      </p>
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <p>{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 220 }}</p>
+    </article>
+  </li>
+  {%- endfor %}
+</ol>
