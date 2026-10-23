@@ -26,14 +26,15 @@ kramdown:
   hard_wrap: false
 
 # Posts live in _posts/ as YYYY-MM-DD-title.md and are served at /blog/title/.
-permalink: /blog/:title/
-
+# The permalink is set for posts only: site-wide, it would also move pages
+# like privacy.html to /privacy/.
 defaults:
   - scope:
       path: ""
       type: posts
     values:
       layout: post
+      permalink: /blog/:title/
 
 exclude:
   - README.md
