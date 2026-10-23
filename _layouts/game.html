@@ -7,12 +7,7 @@ layout: default
         <div class="wrap game-hero-grid">
           <div>
             <p class="eyebrow"><a href="/#projects">Projects</a> / {{ game.num }} · {{ game.kind }}</p>
-            <div class="game-title">
-              {%- if game.icon %}
-              <img class="game-icon{% if game.icon_pixel %} px{% endif %}" src="{{ game.icon }}" width="72" height="72" alt="">
-              {%- endif %}
-              <h1>{{ game.name }}</h1>
-            </div>
+            <h1>{{ game.name }}</h1>
             <p class="lede">{{ game.tagline }}</p>
             <div class="actions">
               {%- for store in game.stores %}

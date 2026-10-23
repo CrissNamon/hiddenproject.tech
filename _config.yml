@@ -10,14 +10,19 @@ timezone: Asia/Yerevan
 lang: en
 
 # Shown in the footer and the About section, and listed as sameAs for search engines.
+# icon names a drawing in _includes/social-links.html.
 social:
   - name: Instagram
+    icon: instagram
     url: https://www.instagram.com/tech.hiddenproject/
   - name: X
+    icon: x
     url: https://x.com/hiddenprjtech
   - name: TikTok
+    icon: tiktok
     url: https://www.tiktok.com/@hiddenproject.tech
   - name: Google Play
+    icon: google-play
     url: https://play.google.com/store/apps/dev?id=7391390601934110448
 
 markdown: kramdown

@@ -19,57 +19,64 @@ preload_image: /assets/darkness-hero.jpg
               <figcaption>The Outer Darkness</figcaption>
             </figure>
           </div>
-
-
-          <ol class="codex">
-            {%- for game in site.data.games %}
-            <li{% if forloop.first %} class="is-current"{% endif %}>
-              <a href="/{{ game.slug }}/">
-                <span class="num">{{ game.num }}</span>
-                <span>
-                  <span class="name">{{ game.name }}</span>
-                  <em class="kind">{{ game.kind }}</em>
-                </span>
-                <span class="state">{{ game.status }}</span>
-              </a>
-            </li>
-            {%- endfor %}
-          </ol>
         </div>
       </section>
 
       <section class="band" id="projects" aria-labelledby="projects-title">
         <div class="wrap">
-          <p class="eyebrow">Projects</p>
-          <h2 id="projects-title">Games</h2>
-          <div class="game-grid">
-            {%- for game in site.data.games %}
-            {%- assign primary = game.stores | first %}
-            <article class="game-tile" id="{{ game.anchor | default: game.slug }}" style="--ember: {{ game.accent }};">
-              <a class="game-tile-art" href="/{{ game.slug }}/" tabindex="-1" aria-hidden="true">
-                <img src="{{ game.feature }}" width="{{ game.feature_width }}" height="{{ game.feature_height }}" alt="" loading="lazy">
-              </a>
-              <div class="game-tile-body">
-                <p class="kicker">{{ game.num }} · {{ game.kind }}</p>
-                <h3><a href="/{{ game.slug }}/">{{ game.name }}</a></h3>
-                <p>{{ game.summary }}</p>
-                <ul class="stores">
-                  <li><span class="pip" aria-hidden="true"></span> <a href="{{ primary.url }}">{{ primary.label }}</a></li>
-                </ul>
-              </div>
-            </article>
-            {%- endfor %}
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Projects</p>
+              <h2 id="projects-title">Games</h2>
+            </div>
           </div>
+          <ul class="game-grid">
+            {%- for game in site.data.games %}
+            <li class="game-tile" id="{{ game.anchor | default: game.slug }}" style="--ember: {{ game.accent }};">
+              <a class="game-tile-link" href="/{{ game.slug }}/">
+                <img src="{{ game.feature }}" width="{{ game.feature_width }}" height="{{ game.feature_height }}" alt="" loading="lazy">
+                <span class="game-tile-body">
+                  <span class="kicker">{{ game.num }} · {{ game.kind }}</span>
+                  <span class="game-tile-name">{{ game.short_name | default: game.name }}</span>
+                  <span class="game-tile-status"><span class="pip" aria-hidden="true"></span> {{ game.status }}</span>
+                </span>
+              </a>
+              <ul class="game-tile-stores" aria-label="{{ game.short_name | default: game.name }} in stores">
+                {%- for store in game.stores %}
+                <li><a href="{{ store.url }}">{{ store.name }}</a></li>
+                {%- endfor %}
+              </ul>
+            </li>
+            {%- endfor %}
+          </ul>
         </div>
       </section>
 
       {%- if site.posts.size > 0 %}
-      <section class="band" aria-labelledby="blog-title">
+      <section class="band" id="blog" aria-labelledby="blog-title">
         <div class="wrap">
-          <p class="eyebrow">Blog</p>
-          <h2 id="blog-title">Latest notes</h2>
-          {% include post-list.html posts=site.posts limit=3 %}
-          <p><a class="pixel-btn" href="/blog/">All posts</a></p>
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Blog</p>
+              <h2 id="blog-title">Latest notes</h2>
+            </div>
+            <a class="pixel-btn" href="/blog/">All posts</a>
+          </div>
+          <ul class="post-cards">
+            {%- for post in site.posts limit: 3 %}
+            {%- assign post_game = site.data.games | where: "slug", post.game | first %}
+            <li{% if post_game %} style="--ember: {{ post_game.accent }};"{% endif %}>
+              <a href="{{ post.url }}">
+                <span class="post-meta">
+                  <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B %Y" }}</time>
+                  {%- if post_game %} · {{ post_game.short_name | default: post_game.name }}{% endif %}
+                </span>
+                <span class="post-card-title">{{ post.title }}</span>
+                <span class="post-card-text">{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 160 }}</span>
+              </a>
+            </li>
+            {%- endfor %}
+          </ul>
         </div>
       </section>
       {%- endif %}
@@ -106,11 +113,7 @@ preload_image: /assets/darkness-hero.jpg
             </div>
             <div>
               <dt>Follow</dt>
-              <dd class="social">
-                {%- for link in site.social %}
-                <a href="{{ link.url }}" rel="me noopener">{{ link.name }}</a>
-                {%- endfor %}
-              </dd>
+              <dd>{% include social-links.html %}</dd>
             </div>
           </dl>
         </div>

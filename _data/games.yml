@@ -14,7 +14,6 @@
   accent: "#3cff7a"
   tagline: Board fast. Take what you can. Get out before it notices you.
   summary: Board dead ships, aim for weak spots and escape with the loot. A turn-based sci-fi roguelike extraction crawler.
-  icon: /the-outer-darkness/icon.png
   feature: /the-outer-darkness/feature-graphic.png
   feature_width: 1024
   feature_height: 500
@@ -147,8 +146,6 @@
   accent: "#a7f070"
   tagline: Merge. Evolve. Collect.
   summary: Merge tiny creatures, evolve a living pixel jar and collect rare mutations.
-  icon: /jarlife/google-play/icon.png
-  icon_pixel: true
   feature: /jarlife/feature-16x9.png
   feature_width: 1920
   feature_height: 1080
@@ -205,8 +202,6 @@
   accent: "#d8924a"
   tagline: How far can you climb?
   summary: An endless tower that climbs while you're away. Turn-based boss fights, pixel art, no account.
-  icon: /the-tower/google-play/icon.png
-  icon_pixel: true
   feature: /the-tower/google-play/feature-graphic.png
   feature_width: 1024
   feature_height: 500
