@@ -2,14 +2,26 @@
 {%- if page.game -%}
   {%- assign game = site.data.games | where: "slug", page.game | first -%}
 {%- endif -%}
-{%- assign page_title = page.title | default: game.name -%}
+{%- comment %} A game page is titled by its seo_title from _data/games.yml: the name and what it is, for search results. {% endcomment -%}
+{%- assign page_title = page.title | default: game.seo_title | default: game.name -%}
 {%- assign page_description = page.description | default: game.summary | default: site.description -%}
 {%- assign page_image = page.image | default: game.feature | default: "/assets/og.png" -%}
+{%- if page.image -%}
+  {%- assign page_image_alt = page.image_alt | default: page.title -%}
+{%- elsif game -%}
+  {%- assign page_image_width = game.feature_width -%}
+  {%- assign page_image_height = game.feature_height -%}
+  {%- assign page_image_alt = game.feature_alt -%}
+{%- else -%}
+  {%- assign page_image_width = 1200 -%}
+  {%- assign page_image_height = 630 -%}
+  {%- assign page_image_alt = site.title -%}
+{%- endif -%}
 <html lang="{{ site.lang }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if page_title %}{{ page_title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>{% if page.seo_title %}{{ page.seo_title }}{% elsif page_title %}{{ page_title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ page_description | strip_html | strip_newlines | escape }}">
     <meta name="author" content="{{ site.author }}">
     <meta name="theme-color" content="#0e1012">
@@ -17,21 +29,39 @@
     {%- if page.noindex %}
     <meta name="robots" content="noindex">
     {%- else %}
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="{{ page.url | absolute_url }}">
     {%- endif %}
+    {%- for store in game.stores %}
+    {%- if store.name == "App Store" %}
+    <meta name="apple-itunes-app" content="app-id={{ store.url | split: '/id' | last | split: '?' | first }}">
+    {%- endif %}
+    {%- endfor %}
     <meta property="og:type" content="{% if page.collection == 'posts' %}article{% else %}website{% endif %}">
     <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="en_US">
     <meta property="og:title" content="{{ page.og_title | default: page_title | default: site.title | escape }}">
     <meta property="og:description" content="{{ page_description | strip_html | strip_newlines | escape }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     <meta property="og:image" content="{{ page_image | absolute_url }}">
+    {%- if page_image_width %}
+    <meta property="og:image:width" content="{{ page_image_width }}">
+    <meta property="og:image:height" content="{{ page_image_height }}">
+    {%- endif %}
+    <meta property="og:image:alt" content="{{ page_image_alt | escape }}">
     {%- if page.collection == 'posts' %}
     <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+    <meta property="article:modified_time" content="{{ page.last_modified_at | default: page.date | date_to_xmlschema }}">
     {%- endif %}
     <meta name="twitter:card" content="summary_large_image">
+    {%- assign x_link = site.social | where: "icon", "x" | first %}
+    {%- if x_link %}
+    <meta name="twitter:site" content="@{{ x_link.url | split: '/' | last }}">
+    {%- endif %}
     <meta name="twitter:title" content="{{ page.og_title | default: page_title | default: site.title | escape }}">
     <meta name="twitter:description" content="{{ page_description | strip_html | strip_newlines | escape }}">
     <meta name="twitter:image" content="{{ page_image | absolute_url }}">
+    <meta name="twitter:image:alt" content="{{ page_image_alt | escape }}">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">

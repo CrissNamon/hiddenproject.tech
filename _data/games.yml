@@ -2,6 +2,7 @@
 # (/<slug>/index.html) is drawn from its entry here by _layouts/game.html.
 #
 #   anchor    the id of its card on the main page, when it isn't the slug
+#   seo_title the page title in search results: the name, what it is, and where to play it
 #   accent    the game's own colour, used for buttons and labels on its page
 #   stores    the first one is the main button
 #   shots     screenshots for the gallery; caption is shown, alt is for screen readers
@@ -9,6 +10,7 @@
 - slug: the-outer-darkness
   num: "01"
   name: The Outer Darkness
+  seo_title: "The Outer Darkness: Sci-Fi Roguelike for iPhone and Android"
   kind: Sci-fi roguelike
   status: Pre-registration
   accent: "#3cff7a"
@@ -86,6 +88,7 @@
 - slug: dance-catharsis
   num: "02"
   name: Dance CATharsis
+  seo_title: "Dance CATharsis: Cat Band Rhythm Game for Android"
   kind: Rhythm and cats
   status: Google Play
   accent: "#ff4fb8"
@@ -140,6 +143,7 @@
   anchor: the-jar
   num: "03"
   name: "Jarlife: Merge Terrarium"
+  seo_title: "Jarlife: Merge Terrarium, an Idle Merge Game for Android"
   short_name: Jarlife
   kind: Merge and idle
   status: Google Play
@@ -196,6 +200,7 @@
   anchor: tower
   num: "04"
   name: "The Tower: Endless Climb RPG"
+  seo_title: "The Tower: Endless Climb RPG, an Idle Tower Game for Android"
   short_name: The Tower
   kind: Idle RPG
   status: Google Play
