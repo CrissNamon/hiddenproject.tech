@@ -66,7 +66,8 @@ preload_image: /assets/darkness-hero.webp
           </div>
           <ul class="post-cards">
             {%- for post in site.posts limit: 3 %}
-            {%- assign post_game = site.data.games | where: "slug", post.game | first %}
+            {%- assign post_game = nil %}
+            {%- if post.game %}{% assign post_game = site.data.games | where: "slug", post.game | first %}{% endif %}
             <li{% if post_game %} style="--ember: {{ post_game.accent }};"{% endif %}>
               <a href="{{ post.url }}">
                 <span class="post-meta">

@@ -4,7 +4,8 @@
 {%- assign list_limit = include.limit | default: include.posts.size -%}
 <ol class="post-list">
   {%- for post in include.posts limit: list_limit %}
-  {%- assign post_game = site.data.games | where: "slug", post.game | first %}
+  {%- assign post_game = nil %}
+  {%- if post.game %}{% assign post_game = site.data.games | where: "slug", post.game | first %}{% endif %}
   <li>
     <article>
       <p class="post-meta">

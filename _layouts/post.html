@@ -1,7 +1,11 @@
 ---
 layout: default
 ---
-{%- assign game = site.data.games | where: "slug", page.game | first -%}
+{%- comment %} Jekyll's where returns every game when page.game is empty, so look it up only when a post names one. {% endcomment -%}
+{%- assign game = nil -%}
+{%- if page.game -%}
+  {%- assign game = site.data.games | where: "slug", page.game | first -%}
+{%- endif -%}
       <article class="page post">
         <div class="wrap page-narrow">
           <p class="eyebrow"><a href="/blog/">Blog</a> / <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%-d %B %Y" }}</time></p>
