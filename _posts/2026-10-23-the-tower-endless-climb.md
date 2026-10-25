@@ -6,7 +6,7 @@ description: An endless tower with a fight on every floor, three doors after eac
 game: the-tower
 ---
 
-The Tower: Endless Climb RPG is an idle RPG about one question: how far can you climb? It's out now on Google Play.
+The Tower: Endless Idle RPG is about one question: how far can you climb? It's out now on Google Play.
 
 <img src="/assets/tower-combat.webp" width="320" height="711" alt="A turn-based fight in The Tower on floor 78: a Rotting Tenant, with Strike, Heavy Blow, Ultimate and Interrupt." loading="lazy">
 
