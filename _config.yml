@@ -21,6 +21,9 @@ social:
   - name: TikTok
     icon: tiktok
     url: https://www.tiktok.com/@hiddenproject.tech
+  - name: YouTube
+    icon: youtube
+    url: https://www.youtube.com/@hiddenprojecttech
   - name: Google Play
     icon: google-play
     url: https://play.google.com/store/apps/dev?id=7391390601934110448
