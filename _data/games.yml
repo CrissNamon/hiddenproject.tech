@@ -12,7 +12,7 @@
   name: The Outer Darkness
   seo_title: "The Outer Darkness: Sci-Fi Roguelike for iPhone and Android"
   kind: Sci-fi roguelike
-  status: Pre-registration
+  status: Open test
   accent: "#3cff7a"
   tagline: Board fast. Take what you can. Get out before it notices you.
   summary: Board dead ships, aim for weak spots and escape with the loot. A turn-based sci-fi roguelike extraction crawler.
@@ -23,7 +23,7 @@
   privacy: /the-outer-darkness/privacy-policy/
   stores:
     - name: Google Play
-      label: Pre-register on Google Play
+      label: Join the test on Google Play
       url: https://play.google.com/store/apps/details?id=tech.hiddenproject.theouterdarkness
     - name: App Store
       label: Pre-order on the App Store
