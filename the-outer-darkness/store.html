@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>The Outer Darkness</title>
+<style>html,body{margin:0;background:#0b0d12}</style>
+<script>
+(function () {
+  // ===== CONFIG — edit these =====
+  var CONFIG = {
+    appStoreId: "6824474398",
+    appStoreCountry: "us",
+    appStoreSlug: "the-outer-darkness-sci-fi-rpg",
+    // Optional: App Store Connect provider token ("pt").
+    // With it, ?utm_campaign=xyz (or ?ct=xyz) shows up as a campaign in App Analytics.
+    appleProviderToken: "",
+    androidPackage: "com.example.outerdarkness", // <-- your Play Store package name
+    // Where desktop / unknown devices go: "ios", "android", or a full URL (e.g. your website).
+    desktop: "ios"
+  };
+  // ================================
+
+  var params = new URLSearchParams(location.search);
+
+  function iosUrl() {
+    var u = new URL("https://apps.apple.com/" + CONFIG.appStoreCountry + "/app/" +
+                    CONFIG.appStoreSlug + "/id" + CONFIG.appStoreId);
+    if (CONFIG.appleProviderToken) {
+      u.searchParams.set("pt", CONFIG.appleProviderToken);
+      var ct = params.get("ct") || params.get("utm_campaign");
+      if (ct) u.searchParams.set("ct", ct.slice(0, 40)); // Apple limit: 40 chars
+      u.searchParams.set("mt", "8");
+    }
+    return u.toString();
+  }
+
+  function androidUrl() {
+    var u = new URL("https://play.google.com/store/apps/details");
+    u.searchParams.set("id", CONFIG.androidPackage);
+    // Forward the incoming query (utm_*, click ids…) as the Play Install Referrer.
+    var ref = params.get("referrer") || params.toString();
+    if (ref) u.searchParams.set("referrer", ref);
+    return u.toString();
+  }
+
+  function isIOS() {
+    var ua = navigator.userAgent || "", p = navigator.platform || "";
+    if (/iPhone|iPad|iPod/.test(ua) || /iPhone|iPad|iPod/.test(p)) return true;
+    // iPadOS 13+ reports itself as a Mac; real Macs report 0 touch points.
+    return /Mac/.test(p || ua) && navigator.maxTouchPoints > 1;
+  }
+
+  function isAndroid() {
+    return /Android/i.test(navigator.userAgent || "");
+  }
+
+  function go(url) {
+    // Break out of an ad iframe if allowed; otherwise redirect this frame.
+    try {
+      if (window.top !== window.self) { window.top.location.href = url; return; }
+    } catch (e) { /* cross-origin / sandboxed frame */ }
+    // replace() keeps this page out of history, so "Back" doesn't bounce the user again.
+    window.location.replace(url);
+  }
+
+  var url;
+  if (isIOS()) url = iosUrl();
+  else if (isAndroid()) url = androidUrl();
+  else if (CONFIG.desktop === "android") url = androidUrl();
+  else if (CONFIG.desktop === "ios") url = iosUrl();
+  else url = CONFIG.desktop;
+
+  go(url);
+})();
+</script>
+<!-- No JavaScript: fall back to the App Store listing -->
+<noscript><meta http-equiv="refresh" content="0;url=https://apps.apple.com/us/app/the-outer-darkness-sci-fi-rpg/id6824474398"></noscript>
+</head>
+<body></body>
+</html>
