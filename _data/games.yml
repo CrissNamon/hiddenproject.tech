@@ -227,18 +227,53 @@
     - src: /assets/tower-floor.webp
       width: 1080
       height: 2400
-      caption: Gold waits to be claimed
-      alt: The Tower on floor 78, Voidspire. Gold is waiting to be claimed, materials are gathering, and a skill is sealed every three turns.
-    - src: /assets/tower-combat.webp
+      caption: Three doors to the next floor
+      alt: The Tower in Voidspire, with three doors to floor 78, one safe and two gambles, under banners for Season 1, the Belfry, and the Long Night.
+    - src: /assets/tower-battle.webp
       width: 1080
       height: 2400
-      caption: Something is already there
-      alt: A turn-based fight in The Tower. Floor 78, a Rotting Tenant, with Strike, Heavy Blow, Ultimate, and Interrupt.
-    - src: /assets/tower-descend.webp
+      caption: Stop it before it lands
+      alt: The fight at gate 60 against the Bellwright, Keeper of the Sixth Gate. It is gathering a blow for two turns, and Interrupt is lit.
+    - src: /assets/tower-walk.webp
       width: 1080
       height: 2400
-      caption: Marks buy the next rank
-      alt: The Tower descend screen. Fourteen marks, and ranks for Edge, Vigour, and Hoard that can be bought.
+      caption: Walk the floor you won
+      alt: A won floor on a small top-down map. The climber walks stone corridors past a lamp and a chest toward three stairs, and each stair is a door.
+    - src: /assets/tower-lair.webp
+      width: 1080
+      height: 2400
+      caption: Hunt the keeper in its lair
+      alt: The Bellwright's Belfry, a lair behind gate 60, with the first of its three chambers ready to fight.
+    - src: /assets/tower-haven.webp
+      width: 1080
+      height: 2400
+      caption: Trainers in the Haven
+      alt: The Haven behind gate 60, with a rumour board, a shop stall, and four trainers, the Blademaster, the Shieldbearer, the Binder, and the Apothecary.
+    - src: /assets/tower-camp.webp
+      width: 1080
+      height: 2400
+      caption: The camp stays standing
+      alt: The base camp with every building up, the cellar, the shelf, a tent by the fire, the table, and the well.
+    - src: /assets/tower-landing.webp
+      width: 1080
+      height: 2400
+      caption: A choice on the stair
+      alt: The Long Night's first scene on a landing. The Lamplighter offers his taper, and the choice is to take it or leave him to it.
+    - src: /assets/tower-gear.webp
+      width: 1080
+      height: 2400
+      caption: A gate's rare
+      alt: The gear screen with the climber in their equipment, and the Cracked Bell, a rare tier-9 trinket, turned over to show its stats and affixes.
+    - src: /assets/tower-ledger.webp
+      width: 1080
+      height: 2400
+      caption: A place in the Ledger
+      alt: The Ledger, with the climber ninth on floor 78 among climbers above and below, each with a line about them.
+    - src: /assets/tower-vows.webp
+      width: 1080
+      height: 2400
+      caption: Swear a vow for more marks
+      alt: Vows sworn before the first floor. Blunted is sworn for more marks, and Brittle and Exposed wait to be sworn.
   facts:
     - term: Combat
       desc: Turn-based. Spend energy, watch your cooldowns, and interrupt the big hit before it lands.
