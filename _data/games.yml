@@ -207,7 +207,7 @@
   accent: "#d8924a"
   tagline: How far can you climb?
   summary: An endless tower that climbs while you're away. Turn-based boss fights, pixel art, no account.
-  feature: /the-tower/google-play/feature-graphic.png
+  feature: /the-tower/feature-graphic.png
   feature_width: 1024
   feature_height: 500
   feature_alt: The Tower feature graphic.
@@ -224,7 +224,7 @@
     - Every floor up is a choice, from the Ashlands to the Obsidian Gate. The safe door pays less.
     - No account, no internet needed. No premium currency, no energy timers, no way to pay past a fight.
   shots:
-    - src: /assets/tower-floor.webp
+    - src: /assets/tower-doors.webp
       width: 1080
       height: 2400
       caption: Three doors to the next floor
