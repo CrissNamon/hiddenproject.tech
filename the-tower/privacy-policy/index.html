@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy · The Tower</title>
-<meta name="description" content="The Tower keeps your climb on your phone. The only thing it sends is a crash report, and you can turn that off.">
+<meta name="description" content="The Tower keeps your climb on your phone. It sends crash reports and anonymous usage statistics, and you can turn either off.">
 <link rel="canonical" href="https://hiddenproject.tech/the-tower/privacy-policy/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,16 +64,17 @@
 </head>
 <body>
 <main>
-  <a class="back" href="index.html">← The Tower</a>
+  <a class="back" href="/the-tower/">← The Tower</a>
 
   <h1>PRIVACY POLICY</h1>
-  <p class="meta">The Tower, for Android · Effective 2 October 2026</p>
+  <p class="meta">The Tower, for Android and iPhone · Effective 15 November 2026</p>
 
   <p class="summary">
-    The Tower has no account, no server and no analytics. Your climb lives on your
-    phone, and it only goes somewhere else if you send it there. Two things leave the
-    phone: the optional rewarded video ads, which come from the ad network Appodeal, and
-    crash reports, so a crash can be fixed, which you can turn off in Settings.
+    The Tower has no account and no server. Your climb lives on your phone, and it
+    only goes somewhere else if you send it there. Three things leave the phone: the
+    optional rewarded video ads, which come from the ad network Appodeal; crash
+    reports, so a crash can be fixed; and anonymous usage statistics, so we can see
+    where the climb stalls. The last two you can turn off in Settings, separately.
   </p>
 
   <h2>Who we are</h2>
@@ -94,7 +95,7 @@
       free memory and storage;</li>
     <li>the version of the game;</li>
     <li>a random identifier for this installation, so that repeat crashes on one phone
-      can be counted as one. It is not linked to you, your Google account or your
+      can be counted as one. It is not linked to you, your Google or Apple account or your
       climber, and it changes if you reinstall the game.</li>
   </ul>
   <p>
@@ -110,7 +111,46 @@
   </p>
   <p>
     <strong>Turning it off:</strong> Settings → <em>Send crash reports</em>. When it is
-    off, nothing is sent.
+    off, no report is sent.
+  </p>
+
+  <h2>What we collect: usage statistics</h2>
+  <p>
+    The game counts what happens in it and sends those counts to Google Analytics for
+    Firebase, a service run by Google for us. An event is one of a fixed list the game
+    knows, with a few numbers or content names attached:
+  </p>
+  <ul>
+    <li>a climber being made, the guided opening being finished or skipped, a climber
+      being deleted, a save file being exported or imported;</li>
+    <li>the climb: a floor reached, a gate cleared, a death and the Haven it returned
+      to, a Descent and the marks it paid, a claim and how much it banked, a door
+      chosen and its biome, a landing's choice, a floor or lair walked, a fight started
+      and how it ended — won or lost, in how many turns, against which creature;</li>
+    <li>spending: a piece of gear levelled, ascended, re-rolled or crafted, a find
+      turned in or used, a lesson taken, a consumable bought or used, a camp building
+      raised, a contract claimed, a vow sworn or broken, a title worn;</li>
+    <li>a rewarded ad offered and whether it was watched, left or refused;</li>
+    <li>which of the five rooms is open, and a switch in Settings being moved;</li>
+    <li>with every event: your record floor, how many times you have descended, the
+      game's language and version, your phone's model and operating system version,
+      the country worked out from your IP address, and a random identifier for this
+      installation, so that one phone's events can be counted as one player. It is
+      not linked to you, your Google or Apple account or your climber, and it changes
+      if you reinstall the game.</li>
+  </ul>
+  <p>
+    An event never contains your climber's name, your save, or anything you typed.
+    The game does not give Google your advertising ID for this, and tells it not to
+    use the statistics for advertising. We use them only to understand how the game is
+    played — where players stop, which fights are too hard, which features go unused —
+    and to decide what to change. We do not sell them, share them or use them for
+    advertising. Google keeps them for 14 months and processes them under the
+    <a href="https://firebase.google.com/support/privacy">Firebase privacy terms</a>.
+  </p>
+  <p>
+    <strong>Turning it off:</strong> Settings → <em>Share usage statistics</em>. When
+    it is off, nothing is counted; the switch is separate from the crash reports.
   </p>
 
   <h2>Ads</h2>
@@ -128,7 +168,10 @@
   </p>
   <ul>
     <li>your device's <strong>advertising ID</strong>, which you can reset or delete in
-      your phone's settings (Settings → Google → Ads on most Android phones);</li>
+      your phone's settings (Settings → Google → Ads on most Android phones). On an
+      iPhone it is sent only if you allow it when the game asks whether it may track
+      you, which it does once, before the first ad; you can change that answer in
+      Settings → Privacy &amp; Security → Tracking;</li>
     <li>your <strong>IP address</strong>, from which a rough location, such as the
       country, can be worked out;</li>
     <li>technical details: your phone's make and model, operating system, language,
@@ -154,8 +197,8 @@
     is always a choice: no ad is ever shown that you did not ask for.
   </p>
   <p>
-    Apart from ads and crash reports the game sends nothing. It has no analytics and no
-    other third-party tracking of any kind.
+    Apart from ads, crash reports and the usage statistics above, the game sends
+    nothing. It has no other third-party tracking of any kind.
   </p>
 
   <h2>What stays on your phone</h2>
@@ -167,7 +210,7 @@
     </li>
     <li>
       <strong>Your preferences:</strong> whether music and sound effects are on, the
-      language, and whether crash reports are sent.
+      language, and whether crash reports and usage statistics are sent.
     </li>
   </ul>
   <p>
@@ -180,8 +223,10 @@
     Android may include the save in your device's own backup, such as Google's backup
     to your Google Account, and may carry it to a new phone during setup. That is a
     feature of your phone, not of the game. It follows your device's backup settings
-    and Google's privacy policy, and you can turn it off in your phone's settings. We
-    never receive these backups.
+    and Google's privacy policy, and you can turn it off in your phone's settings. On
+    an iPhone the save is included in iCloud Backup and in a transfer to a new iPhone,
+    under your iCloud settings and Apple's privacy policy, in the same way. We never
+    receive these backups.
   </p>
 
   <h2>Save files you export</h2>
@@ -203,17 +248,18 @@
   <h2>Children</h2>
   <p>
     The Tower is not directed at children under 13 and does not ask anyone, of any age,
-    for personal information. Crash reports are technical, contain nothing that
-    identifies a person, and are used only to fix the game. Ads are only ever shown
-    when the player asks for one.
+    for personal information. Crash reports and usage statistics are technical,
+    contain nothing that identifies a person, and are used only to fix and improve the
+    game. Ads are only ever shown when the player asks for one.
   </p>
 
   <h2>Changes to this policy</h2>
   <p>
     If a future version of the game ever handles data differently, for example by
-    adding analytics or another kind of ad, this policy will be updated before that
-    version is released. The date at the top will change with it. Versions before 0.1.2
-    show no ads and send nothing but crash reports.
+    adding another kind of ad, this policy will be updated before that version is
+    released. The date at the top will change with it. Versions before 0.1.2 show no
+    ads and send nothing but crash reports; versions before 1.0.0 (21) send no
+    usage statistics.
   </p>
 
   <footer>
