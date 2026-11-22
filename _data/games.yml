@@ -219,6 +219,9 @@
     - name: Google Play
       label: Get it on Google Play
       url: https://play.google.com/store/apps/details?id=tech.hiddenproject.thetower
+    - name: App Store
+      label: Pre-order on the App Store
+      url: https://apps.apple.com/us/app/the-tower-idle-rpg/id6832433757
   about:
     - Go through enemies, gate bosses and weekly raids. Each floor is a fight, and each fight opens new doors. Your fall is your end.
     - Every floor up is a choice, from the Ashlands to the Obsidian Gate. The safe door pays less.
