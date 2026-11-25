@@ -446,8 +446,7 @@ h1 {
   min-width: 0;
 }
 
-.showcase .project-copy,
-.tower-intro {
+.showcase .project-copy {
   grid-area: intro;
 }
 

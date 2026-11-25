@@ -36,5 +36,3 @@ Everything in 2.0 is free. Nothing resets, nothing is sold, and it all plays off
 ## Get ready
 
 Already playing? The update arrives on December 7 like any other, so keep the game updated. New here? Get The Outer Darkness on [Google Play](https://play.google.com/store/apps/details?id=tech.hiddenproject.theouterdarkness) or the [App Store](https://apps.apple.com/us/app/the-outer-darkness-sci-fi-rpg/id6824474398), and there are two weeks of boarding to learn the ships first.
-
-Same day, The Tower comes to iPhone, and it's [open for pre-order](/blog/the-tower-app-store-pre-order/) now.
